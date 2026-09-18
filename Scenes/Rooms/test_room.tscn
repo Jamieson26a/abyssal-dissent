@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="3_8k5sq"]
 [ext_resource type="Texture2D" uid="uid://bl3cwlcbt0fiq" path="res://Assets/Tilesets/testTileset.png" id="3_wrd0h"]
 [ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="4_8k5sq"]
+[ext_resource type="PackedScene" uid="uid://xxm2nuivpmr5" path="res://Scenes/hazard.tscn" id="5_c42wt"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="6_wrd0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c42wt"]
 texture = ExtResource("3_wrd0h")
@@ -144,5 +146,18 @@ script = ExtResource("3_8k5sq")
 godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
+[node name="hazard" parent="." unique_id=1244506505 instance=ExtResource("5_c42wt")]
+position = Vector2(920, 1000)
+
 [node name="Player" parent="." unique_id=1070948515 instance=ExtResource("4_8k5sq")]
 position = Vector2(1999, 1039)
+
+[node name="PlayerHealth" type="Label" parent="." unique_id=260652774]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(10, 10)
+theme = ExtResource("6_wrd0h")
+text = "Health: X"
+
+[connection signal="body_entered" from="hazard" to="Player" method="_on_hazard_body_entered"]

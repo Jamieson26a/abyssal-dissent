@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://xxm2nuivpmr5"]
+
+[ext_resource type="Texture2D" uid="uid://cpbkndwtr0yuf" path="res://icon.svg" id="1_ci3js"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5ydo"]
+size = Vector2(80, 80)
+
+[node name="hazard" type="Area2D" unique_id=1244506505]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1625144483]
+scale = Vector2(0.99, 0.99)
+shape = SubResource("RectangleShape2D_a5ydo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=914709744]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_ci3js")
