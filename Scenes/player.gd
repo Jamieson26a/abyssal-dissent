@@ -2,7 +2,7 @@ extends CharacterBody2D
 var health
 
 func _ready():
-	health = 8
+	health = 10
 	updateLabel();
 
 func _process(delta):
@@ -23,4 +23,9 @@ func _on_hazard_body_entered(body: Node2D) -> void:
 	updateLabel();
 
 func updateLabel():
-	$".."/PlayerHealth.text = "Health: " + str(health);
+	if (health >= 5):
+		$".."/RightHand.animation = "0";
+		$".."/LeftHand.animation = str(10-health);
+	elif (health >= 0):
+		$".."/RightHand.animation = str(5-health);
+		$".."/LeftHand.animation = "5";
