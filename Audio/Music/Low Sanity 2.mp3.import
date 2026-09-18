@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0ipj3q8c2031"
+path="res://.godot/imported/Low Sanity 2.mp3-a63e2b12f5a75b2d67bc2498bbf8fd8f.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Low Sanity 2.mp3"
+dest_files=["res://.godot/imported/Low Sanity 2.mp3-a63e2b12f5a75b2d67bc2498bbf8fd8f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

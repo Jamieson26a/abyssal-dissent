@@ -2,18 +2,148 @@
 
 [ext_resource type="Script" uid="uid://cg80pkpg87xkv" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cpbkndwtr0yuf" path="res://icon.svg" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://cbxl0e6b5xxwb" path="res://Assets/HealthSanityHands/right-hands/0.png" id="3_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://d0ckwif27b8o6" path="res://Assets/HealthSanityHands/right-hands/1.png" id="4_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://dvt0q7gpx4j4o" path="res://Assets/HealthSanityHands/right-hands/2.png" id="5_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://d01a5qitkq8x5" path="res://Assets/HealthSanityHands/right-hands/3.png" id="6_qqcod"]
+[ext_resource type="Texture2D" uid="uid://b8fqfx4ce3bgk" path="res://Assets/HealthSanityHands/right-hands/4.png" id="7_igrcy"]
+[ext_resource type="Texture2D" uid="uid://djv4vn7xi7a6r" path="res://Assets/HealthSanityHands/right-hands/5.png" id="8_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://jny3ubhe77fm" path="res://Assets/HealthSanityHands/left-hands/0.png" id="9_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://cpys7ndgyg5bc" path="res://Assets/HealthSanityHands/left-hands/1.png" id="10_olqyp"]
+[ext_resource type="Texture2D" uid="uid://bdc03qxcnrayj" path="res://Assets/HealthSanityHands/left-hands/2.png" id="11_wpjfl"]
+[ext_resource type="Texture2D" uid="uid://rgdk1i06gme8" path="res://Assets/HealthSanityHands/left-hands/3.png" id="12_bi64h"]
+[ext_resource type="Texture2D" uid="uid://djn8vwcrx78xi" path="res://Assets/HealthSanityHands/left-hands/4.png" id="13_2ijsl"]
+[ext_resource type="Texture2D" uid="uid://dl7gbww7la3y5" path="res://Assets/HealthSanityHands/left-hands/5.png" id="14_p1odr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gysh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7dp3o")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_h4iuc")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fd4e3")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qqcod")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_igrcy")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fs7ks")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfarp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_l6n3p")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_olqyp")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_wpjfl")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_bi64h")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2ijsl")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_p1odr")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1212776525]
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870400138]
+position = Vector2(1280, 720)
 scale = Vector2(0.99, 0.99)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1796405595]
-position = Vector2(-1.9073486e-06, -3.8146973e-06)
+position = Vector2(1280, 720)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("1_v0iea")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1293886085]
+position = Vector2(1280, 719)
+
+[node name="RightHand" type="AnimatedSprite2D" parent="." unique_id=699692483]
+position = Vector2(2409, 199.12488)
+scale = Vector2(1.637499, 1.637499)
+sprite_frames = SubResource("SpriteFrames_0gysh")
+animation = &"0"
+
+[node name="LeftHand" type="AnimatedSprite2D" parent="." unique_id=894017039]
+position = Vector2(150, 198.00002)
+scale = Vector2(1.637499, 1.637499)
+sprite_frames = SubResource("SpriteFrames_vfarp")
+animation = &"0"

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cwk5vp2r7ijbx"]
+
+[ext_resource type="Texture2D" uid="uid://c1tt1pljoagc0" path="res://Assets/Backgrounds/MainMenuBackground.png" id="1_d2nv2"]
+[ext_resource type="Script" uid="uid://bio5u63mvalx5" path="res://mainmenu.gd" id="1_wgsso"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="2_wgsso"]
+[ext_resource type="AudioStream" uid="uid://ba3nv8fb1kc4v" path="res://Audio/Music/Title theme.mp3" id="4_igs2m"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f1gls"]
+fade_time = 1.0
+stream_count = 1
+stream_0 = ExtResource("4_igs2m")
+
+[node name="Mainmenu" type="Node2D" unique_id=1136505750]
+script = ExtResource("1_wgsso")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1522838566]
+custom_minimum_size = Vector2(2560, 1440)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_d2nv2")
+
+[node name="Button1" type="Button" parent="." unique_id=816849017]
+offset_left = 2000.0
+offset_top = 1000.0
+offset_right = 2269.0
+offset_bottom = 1042.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_wgsso")
+theme_override_font_sizes/font_size = 30
+text = "Start New Game
+"
+
+[node name="Button2" type="Button" parent="." unique_id=1728774152]
+offset_left = 2000.0
+offset_top = 1100.0
+offset_right = 2269.0
+offset_bottom = 1142.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_wgsso")
+theme_override_font_sizes/font_size = 30
+text = "Tutorial"
+
+[node name="Button3" type="Button" parent="." unique_id=140303459]
+offset_left = 2000.0
+offset_top = 1200.0
+offset_right = 2269.0
+offset_bottom = 1242.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_wgsso")
+theme_override_font_sizes/font_size = 30
+text = "Settings
+"
+
+[node name="Button4" type="Button" parent="." unique_id=1244997964]
+offset_left = 2000.0
+offset_top = 1300.0
+offset_right = 2269.0
+offset_bottom = 1342.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_wgsso")
+theme_override_font_sizes/font_size = 30
+text = "Quit
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=378607262]
+stream = SubResource("AudioStreamPlaylist_f1gls")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=233917033]
+position = Vector2(1280, 720)
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

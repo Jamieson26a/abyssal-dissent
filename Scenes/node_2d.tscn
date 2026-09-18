@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://jip2nu8pe81x"]
+
+[ext_resource type="Script" uid="uid://3k4odvvirtug" path="res://node_2d.gd" id="1_j2wod"]
+
+[node name="Node2D" type="Node2D" unique_id=1398208034]
+script = ExtResource("1_j2wod")
+
+[node name="Button" type="Button" parent="." unique_id=24819223]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "ME"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
