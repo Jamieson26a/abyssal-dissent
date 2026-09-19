@@ -6,6 +6,7 @@ var player_vars;
 var globalAudio;
 var sanityInt10: int
 var sanityString: String
+var spawnRate: int; # 1 / mobs per frame, avg
 
 @export var player_music_player: AudioStreamPlayer
 @export var walk_music_player: AudioStreamPlayer2D
@@ -27,6 +28,7 @@ func _ready():
 	yielding = false;
 	taskPositions = [];
 	currentTarget = position;
+	spawnRate = 0;
 	
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
@@ -106,6 +108,11 @@ func _process(delta):
 			$YieldPrompt.text = "PRESS Q TO YIELD"
 			set_collision_layer_value(3, true);
 			set_collision_mask_value(3, true);
+			
+	if (spawnRate != 0):
+		var rand = randi_range(1, spawnRate);
+		if rand == 1:
+			spawnMob();
 
 func update_music_for_sanity():
 	var current_sanity_music = str(sanityString + "sanity")
@@ -144,6 +151,8 @@ func sanityUpdate():
 	elif (player_vars.approval > 4):
 		approvalStr = "y"
 	$RightHand/Eye.animation = str(level) + approvalStr;
+	if player_vars.sanity < 500:
+		spawnRate = player_vars.sanity * 10;
 
 func _on_hazard_body_entered(body: Node2D) -> void:
 	hurt();
@@ -226,5 +235,13 @@ func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
 	hurt()
 
 func _on_lava_entered(body: Node2D) -> void:
-	if (not yielding):
-		hurt();
+	if (body == self):
+		if (not yielding):
+			hurt();
+			
+func spawnMob():
+	var positions = $"..".spawnPositions;
+	var buggy = load("res://Assets/buggy.tscn").instantiate();
+	buggy.position = positions.pick_random();
+	$"..".add_child(buggy);
+	

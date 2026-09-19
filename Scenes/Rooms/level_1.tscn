@@ -293,6 +293,9 @@ position = Vector2(32, 32)
 tile_map_data = PackedByteArray("AAAXAAcAAAABAAIAAAAYAAcAAAABAAIAAAAZAAcAAAABAAIAAAAXAAMAAAADAAAAAAAYAAMAAAADAAAAAAAZAAMAAAADAAAAAAA=")
 tile_set = ExtResource("6_e7wec")
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1373188515]
+navigation_polygon = SubResource("NavigationPolygon_cd1hf")
+
 [node name="Player" parent="." unique_id=1212776525 instance=ExtResource("4_c3clq")]
 position = Vector2(210, 305)
 collision_mask = 13
@@ -307,12 +310,9 @@ scale = Vector2(2, 2)
 [node name="bug sprite" parent="Buggy" index="1" unique_id=1116446087]
 frame_progress = 0.8085095
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1373188515]
-navigation_polygon = SubResource("NavigationPolygon_cd1hf")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1756588978]
 position = Vector2(1600, 375)
-collision_layer = 4
+collision_layer = 6
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1508287650]
