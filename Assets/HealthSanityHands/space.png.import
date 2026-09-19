@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kbtts4jucdxc"
-path="res://.godot/imported/Crumbling-Stone-Sprite-Sheet.png-401cb591d591df59722025ed50a6fdf0.ctex"
+uid="uid://co8sm4b0yu3gv"
+path="res://.godot/imported/space.png-067d2cb4e7352ebf3ef0305012e5f05f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Crumbling-Stone-Sprite-Sheet.png"
-dest_files=["res://.godot/imported/Crumbling-Stone-Sprite-Sheet.png-401cb591d591df59722025ed50a6fdf0.ctex"]
+source_file="res://Assets/HealthSanityHands/space.png"
+dest_files=["res://.godot/imported/space.png-067d2cb4e7352ebf3ef0305012e5f05f.ctex"]
 
 [params]
 

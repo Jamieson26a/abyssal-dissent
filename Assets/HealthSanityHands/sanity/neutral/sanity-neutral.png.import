@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bstp4ixbueopk"
-path="res://.godot/imported/sanity.png-1cc6fad17bafa8c801f266755a8edda5.ctex"
+uid="uid://ccxs5e2g7oupx"
+path="res://.godot/imported/sanity-neutral.png-98764076e0d4a91a2ca6165314194f19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HealthSanityHands/sanity.png"
-dest_files=["res://.godot/imported/sanity.png-1cc6fad17bafa8c801f266755a8edda5.ctex"]
+source_file="res://Assets/HealthSanityHands/sanity/neutral/sanity-neutral.png"
+dest_files=["res://.godot/imported/sanity-neutral.png-98764076e0d4a91a2ca6165314194f19.ctex"]
 
 [params]
 
