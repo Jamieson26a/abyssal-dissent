@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://bc1mp4jlaokay"]
 
+[ext_resource type="Texture2D" uid="uid://ip5os44n60qk" path="res://Assets/YouDied.png" id="1_tviqd"]
+
 [node name="Node2D" type="Node2D" unique_id=1884366260]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1559403833]
+position = Vector2(1285.3335, 725)
+scale = Vector2(10.041667, 10.041667)
+texture = ExtResource("1_tviqd")

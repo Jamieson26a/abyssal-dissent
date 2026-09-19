@@ -26,8 +26,9 @@ PlayerVariables="*uid://dmvyibhw6hjik"
 
 [display]
 
-window/size/viewport_width=1860
-window/size/viewport_height=880
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=1
 window/stretch/mode="viewport"
 
 [editor_plugins]
