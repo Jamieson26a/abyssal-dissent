@@ -6,14 +6,7 @@
 [ext_resource type="TileSet" uid="uid://bvpseblxbijlv" path="res://Assets/Tilesets/rock-lava.tres" id="3_4iyq3"]
 [ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="4_c3clq"]
 [ext_resource type="PackedScene" uid="uid://c8sm2xyiki83d" path="res://Scenes/next_room_pit_1.tscn" id="6_cd1hf"]
-[ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="7_4iyq3"]
-[ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="8_e7wec"]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_q8yre"]
-shuffle = true
-stream_count = 2
-stream_0 = ExtResource("7_4iyq3")
-stream_1 = ExtResource("8_e7wec")
+[ext_resource type="PackedScene" uid="uid://578fsl0eg2jy" path="res://Assets/buggy.tscn" id="9_e7wec"]
 
 [node name="Level1" type="Node2D" unique_id=590962347]
 script = ExtResource("1_2ph7l")
@@ -36,8 +29,11 @@ position = Vector2(-1087, -351)
 [node name="Next_Room_Pit_1" parent="." unique_id=1989462336 instance=ExtResource("6_cd1hf")]
 position = Vector2(151, 1048)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1371230393]
-stream = SubResource("AudioStreamPlaylist_q8yre")
-autoplay = true
+[node name="Buggy" parent="." unique_id=2102165395 instance=ExtResource("9_e7wec")]
+position = Vector2(771, 783)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Next_Room_Pit_1" to="Player" method="_on_next_room_pit_1_body_entered"]
+[connection signal="body_entered" from="Buggy/Buggy hit Box" to="Player" method="_on_buggy_hit_box_body_entered"]
+
+[editable path="Buggy"]

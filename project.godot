@@ -23,7 +23,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://54hk1j0ojg5p"
 PlayerVariables="*uid://dmvyibhw6hjik"
-SceneLoader="*uid://cy7ypscjk830h"
+GlobalAudio="*uid://bg8so0u2ql2yv"
 
 [display]
 

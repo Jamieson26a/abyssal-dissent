@@ -1,16 +1,8 @@
 [gd_scene format=4 uid="uid://b0jrceg1nb081"]
 
-[ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="2_67myx"]
-[ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="3_t63ty"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="4_j2qwa"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="5_051rj"]
 [ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="6_l2j73"]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_bp53s"]
-shuffle = true
-stream_count = 2
-stream_0 = ExtResource("2_67myx")
-stream_1 = ExtResource("3_t63ty")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7t4b2"]
 load_path = "res://.godot/imported/testTileset.png-a739ba873bd6aafe0ad0907b5b9c0c9e.ctex"
@@ -145,10 +137,6 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_vx1o4")
 
 [node name="level_2" type="Node2D" unique_id=1247788433]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=433064660]
-stream = SubResource("AudioStreamPlaylist_bp53s")
-autoplay = true
 
 [node name="TileMapDual" type="TileMapLayer" parent="." unique_id=133233093]
 material = ExtResource("4_j2qwa")
