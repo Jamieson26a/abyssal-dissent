@@ -7,8 +7,8 @@ var globalAudio;
 var sanityInt10: int
 var sanityString: String
 
-@export var player_music_player: AudioStreamPlayer
-@export var walk_music_player: AudioStreamPlayer2D
+@onready var player_music_player := $AudioStreamPlayer as AudioStreamPlayer
+@onready var walk_music_player := $AudioStreamPlayer2D as AudioStreamPlayer2D
 
 var yielding: bool;
 
