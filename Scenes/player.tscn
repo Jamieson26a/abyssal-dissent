@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://djn8vwcrx78xi" path="res://Assets/HealthSanityHands/left-hands/4.png" id="13_2ijsl"]
 [ext_resource type="Texture2D" uid="uid://dl7gbww7la3y5" path="res://Assets/HealthSanityHands/left-hands/5.png" id="14_p1odr"]
 [ext_resource type="Texture2D" uid="uid://bto7hpqjp8ciw" path="res://light.png" id="17_qqcod"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="18_igrcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2gqb"]
 radius = 24.242432
@@ -603,21 +604,21 @@ animations = [{
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870400138]
-position = Vector2(1280, 720)
+position = Vector2(-0.27490425, 0.12493706)
 scale = Vector2(0.99, 0.99)
 shape = SubResource("CircleShape2D_p2gqb")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1288046632]
-position = Vector2(1280, 720)
+position = Vector2(-0.2750244, 0.12487793)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_4fppj")
 frame_progress = 0.18479402
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293886085]
-position = Vector2(1280, 719)
+position = Vector2(-0.2750244, -0.8751221)
 
 [node name="RightHand" type="AnimatedSprite2D" parent="." unique_id=699692483]
-position = Vector2(2409, 199.12488)
+position = Vector2(1128.725, -520.75024)
 scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_0gysh")
 animation = &"0"
@@ -629,13 +630,13 @@ sprite_frames = SubResource("SpriteFrames_igrcy")
 animation = &"1"
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="." unique_id=894017039]
-position = Vector2(150, 198.00002)
+position = Vector2(-1130.275, -521.8751)
 scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_vfarp")
 animation = &"0"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
-position = Vector2(1280, 720)
+position = Vector2(-0.27490425, 0.12493706)
 scale = Vector2(10, 10)
 color = Color(1, 1, 0, 1)
 blend_mode = 2
@@ -644,3 +645,21 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 1
 texture = ExtResource("17_qqcod")
 texture_scale = 0.1
+
+[node name="YieldPrompt" type="Label" parent="." unique_id=947397764]
+offset_left = -406.27502
+offset_top = 608.1249
+offset_right = 1243.725
+offset_bottom = 683.1249
+theme = ExtResource("18_igrcy")
+theme_override_colors/font_shadow_color = Color(0.39215687, 0.1882353, 0.7137255, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 64
+text = "PRESS Q TO YIELD"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=885390255]
+avoidance_enabled = true
