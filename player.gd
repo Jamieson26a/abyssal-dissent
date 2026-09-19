@@ -11,7 +11,7 @@ var sanityString: String
 func _ready():
 	player_vars = get_node("/root/PlayerVariables");
 	timeSinceLastSanityTick = 0;
-	sanityTick = 20;
+	sanityTick = 10;
 	sanityInt10 = int(player_vars.sanity/100)
 	updateHealthLabel();
 	sanityUpdate();
