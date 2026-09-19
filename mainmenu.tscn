@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cwk5vp2r7ijbx"]
 
-[ext_resource type="Texture2D" uid="uid://c1tt1pljoagc0" path="res://Assets/Backgrounds/MainMenuBackground.png" id="1_d2nv2"]
 [ext_resource type="Script" uid="uid://bio5u63mvalx5" path="res://mainmenu.gd" id="1_wgsso"]
+[ext_resource type="Texture2D" uid="uid://dtfq6d0uq1aa6" path="res://Assets/Title.png" id="2_igs2m"]
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="2_wgsso"]
 [ext_resource type="AudioStream" uid="uid://ba3nv8fb1kc4v" path="res://Audio/Music/Title theme.mp3" id="4_igs2m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_igs2m"]
+load_path = "res://.godot/imported/Fog2d.png-766b5b00952f587bd3c349b25ab4723a.ctex"
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f1gls"]
 fade_time = 1.0
@@ -14,10 +17,23 @@ stream_0 = ExtResource("4_igs2m")
 script = ExtResource("1_wgsso")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1522838566]
+texture_filter = 1
 custom_minimum_size = Vector2(2560, 1440)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_d2nv2")
+texture = ExtResource("2_igs2m")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="TextureRect" unique_id=839209042]
+position = Vector2(-993, 1231)
+texture = SubResource("CompressedTexture2D_igs2m")
+lifetime = 40.0
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 142.3
+initial_velocity_max = 142.3
+scale_amount_min = 7.0
+scale_amount_max = 7.0
+color = Color(0.38039216, 0.38039216, 0.38039216, 0.33333334)
 
 [node name="Button1" type="Button" parent="." unique_id=816849017]
 offset_left = 2000.0

@@ -38,6 +38,9 @@ position = Vector2(151, 1048)
 position = Vector2(771, 783)
 scale = Vector2(2, 2)
 
+[node name="bug sprite" parent="Buggy" index="1" unique_id=1116446087]
+frame_progress = 0.8085095
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1373188515]
 navigation_polygon = SubResource("NavigationPolygon_cd1hf")
 
