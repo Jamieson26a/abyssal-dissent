@@ -3,26 +3,57 @@ var sanity: float;
 var timeSinceLastSanityTick: float;
 var sanityTick: float;
 var player_vars;
+var yielding: bool;
+
+# For the eldritch
+var taskPositions: Array;
+var currentTarget: Vector2;
+var movement_speed: float = 200.0;
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 func _ready():
 	player_vars = get_node("/root/PlayerVariables");
 	timeSinceLastSanityTick = 0;
-	sanityTick = 50;
+	sanityTick = 5;
+	yielding = false;
+	taskPositions = [];
+	currentTarget = position;
+	
+	# These values need to be adjusted for the actor's speed
+	# and the navigation layout.
+	navigation_agent.path_desired_distance = 80.0
+	navigation_agent.target_desired_distance = 4.0
+	
+	actor_setup.call_deferred()
 	updateHealthLabel();
 	sanityUpdate();
 
+func actor_setup():
+	await get_tree().physics_frame;
+	
+func set_movement_target(movement_target: Vector2):
+	currentTarget = movement_target;
+	navigation_agent.set_target_position(movement_target)
+	print("target set o7")
+
 func _process(delta):
-	var direction = Input.get_vector("left", "right", "up", "down");
-	velocity = direction * 750;
-	move_and_slide();
-	if (direction.x == 1):
-		$Sprite2D.rotation_degrees = 0;
-	elif (direction.x == -1):
-		$Sprite2D.rotation_degrees = 180;
-	elif (direction.y == 1):
-		$Sprite2D.rotation_degrees = 90;
-	elif (direction.y == -1):
-		$Sprite2D.rotation_degrees = 270;
+	var direction;
+	if (not yielding):
+		sanityTick = 5;
+		direction = Input.get_vector("left", "right", "up", "down");
+		velocity = direction * 750;
+		move_and_slide();
+		if (direction.x == 1):
+			$Sprite2D.rotation_degrees = 0;
+		elif (direction.x == -1):
+			$Sprite2D.rotation_degrees = 180;
+		elif (direction.y == 1):
+			$Sprite2D.rotation_degrees = 90;
+		elif (direction.y == -1):
+			$Sprite2D.rotation_degrees = 270;
+	else:
+		direction = Vector2(0,0)
+		sanityTick = 20;
 		
 	if (direction.length() > 0):
 		$Sprite2D.play("walking")
@@ -34,10 +65,42 @@ func _process(delta):
 		player_vars.sanity -= sanityTick;
 		timeSinceLastSanityTick = 0;
 		sanityUpdate();
+		
+	if (Input.is_action_just_pressed("yield")):
+		if (not yielding):
+			yielding = true;
+			$YieldPrompt.text = "PRESS Q TO TAKE BACK OVER"
+			yieldToEntity();
+		else:
+			yielding = false;
+			$YieldPrompt.text = "PRESS Q TO YIELD"
+
+func _physics_process(delta):
+	if navigation_agent.is_navigation_finished():
+		nextTask();
+		print("finished task?")
+		return
+
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+	
+	if (yielding):
+		velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+		print(velocity)
+		move_and_slide();
 
 func sanityUpdate():
 	var level:int = int(player_vars.sanity/100) + 1;
-	$RightHand/Eye.animation = str(level) + player_vars.approval;
+	if (level < 1):
+		level = 1;
+	elif (level > 10):
+		level = 10;
+	var approvalStr = ""
+	if (player_vars.approval < -4):
+		approvalStr = "n"
+	elif (player_vars.approval > 4):
+		approvalStr = "y"
+	$RightHand/Eye.animation = str(level) + approvalStr;
 
 func _on_hazard_body_entered(body: Node2D) -> void:
 	hurt();
@@ -63,6 +126,44 @@ func resetafterexit():
 	player_vars.health = 10
 	player_vars.sanity = 1000
 	
+func yieldToEntity():
+	taskPositions = entityPrioritize();
+	nextTask();
+	
+func nextTask():
+	if (taskPositions.size() != 0):
+		set_movement_target(taskPositions.pop_front());
+	
+func entityPrioritize() -> Array:
+	var possibleActions = $"..".eldritchActions;
+	if (possibleActions != null):
+		var positions = [];
+		var priorities = [];
+		for action in possibleActions:
+			positions.append(possibleActions[action][0])
+			var priority = possibleActions[action][1] + (possibleActions[action][2]*player_vars.approval);
+			priorities.append(priority);
+		var index:int = 0;
+
+		if (priorities.size() > 1):
+			while (index < priorities.size()):
+				if (index == 0):
+					index += 1;
+				if (priorities[index] >= priorities[index - 1]):
+					index += 1;
+				else:
+					var temp = priorities[index];
+					priorities[index] = priorities[index - 1];
+					priorities[index - 1] = temp;
+					
+					temp = positions[index];
+					positions[index] = positions[index - 1];
+					positions[index - 1] = temp;
+					
+					index -= 1;
+		return positions;
+	else:
+		return [];
 
 func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Rooms/level_2.tscn")
