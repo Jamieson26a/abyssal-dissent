@@ -833,7 +833,7 @@ texture_scale = 0.3
 height = 238.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1288046632]
-modulate = Color(0.005643475, 0.14080909, 0.04406441, 1)
+modulate = Color(0.25323758, 0.25323758, 0.25323758, 1)
 position = Vector2(-0.2750244, 0.12487793)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_4fppj")
