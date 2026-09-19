@@ -302,6 +302,7 @@ collision_mask = 13
 
 [node name="Next_Room_Pit_1" parent="." unique_id=1989462336 instance=ExtResource("6_cd1hf")]
 position = Vector2(151, 1048)
+scale = Vector2(2, 2)
 
 [node name="Buggy" parent="." unique_id=2102165395 instance=ExtResource("9_e7wec")]
 position = Vector2(771, 783)
