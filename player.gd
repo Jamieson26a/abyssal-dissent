@@ -42,6 +42,11 @@ func sanityUpdate():
 func _on_hazard_body_entered(body: Node2D) -> void:
 	hurt();
 
+func _on_tutorial_pit_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://mainmenu.tscn")
+	resetafterexit()
+	print("bye")
+
 func hurt():
 	player_vars.health -= 1
 	updateHealthLabel();
@@ -53,4 +58,8 @@ func updateHealthLabel():
 	elif (player_vars.health >= 0):
 		$RightHand.animation = str(5-player_vars.health);
 		$LeftHand.animation = "5";
+	
+func resetafterexit():
+	player_vars.health = 10
+	player_vars.sanity = 1000
 	

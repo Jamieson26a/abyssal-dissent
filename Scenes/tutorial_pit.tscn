@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7t4b2"]
 size = Vector2(80, 80)
 
-[node name="Next_Room_Pit" type="Area2D" unique_id=1660357756]
+[node name="tutorial_Pit" type="Area2D" unique_id=1660357756]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=149165129]
 scale = Vector2(0.625, 0.625)

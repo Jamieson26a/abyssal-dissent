@@ -71,3 +71,4 @@ position = Vector2(1280, 720)
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

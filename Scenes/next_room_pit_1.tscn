@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c8sm2xyiki83d"]
+
+[ext_resource type="Script" uid="uid://cb83prwr5cow6" path="res://Scenes/next_room_pit_1.gd" id="1_0e4m3"]
+[ext_resource type="Texture2D" uid="uid://cpbkndwtr0yuf" path="res://icon.svg" id="1_trquu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7woiw"]
+size = Vector2(128, 128)
+
+[node name="Next_Room_Pit_1" type="Area2D" unique_id=1989462336]
+script = ExtResource("1_0e4m3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=105977048]
+texture = ExtResource("1_trquu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1002951456]
+shape = SubResource("RectangleShape2D_7woiw")
