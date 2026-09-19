@@ -684,8 +684,20 @@ position = Vector2(1280, 720)
 scale = Vector2(0.99, 0.99)
 shape = SubResource("CircleShape2D_p2gqb")
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
+position = Vector2(1280, 720)
+scale = Vector2(10, 10)
+color = Color(0.45464367, 0.3631669, 0.21956548, 1)
+energy = 16.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 1
+texture = ExtResource("17_qqcod")
+texture_scale = 0.3
+height = 238.0
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1288046632]
-modulate = Color(0.36737418, 0.33063155, 0.97762865, 1)
+self_modulate = Color(0.2824075, 0.28240746, 0.28240746, 1)
 position = Vector2(1280, 720)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_4fppj")
@@ -710,18 +722,6 @@ position = Vector2(150, 198.00002)
 scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_vfarp")
 animation = &"0"
-
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
-position = Vector2(1280, 720)
-scale = Vector2(10, 10)
-color = Color(0.45464367, 0.3631669, 0.21956548, 1)
-energy = 3.0
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-shadow_filter = 1
-texture = ExtResource("17_qqcod")
-texture_scale = 0.3
-height = 238.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=50988425]
 stream = SubResource("AudioStreamInteractive_ai37j")
