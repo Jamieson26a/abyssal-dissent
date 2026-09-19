@@ -3,6 +3,11 @@ var sanity: float;
 var timeSinceLastSanityTick: float;
 var sanityTick: float;
 var player_vars;
+var sanityInt10: int
+var sanityString: String
+
+@export var player_music_player: AudioStreamPlayer
+
 var yielding: bool;
 
 # For the eldritch
@@ -14,6 +19,7 @@ var movement_speed: float = 200.0;
 func _ready():
 	player_vars = get_node("/root/PlayerVariables");
 	timeSinceLastSanityTick = 0;
+	sanityInt10 = int(player_vars.sanity/100)
 	sanityTick = 5;
 	yielding = false;
 	taskPositions = [];
@@ -68,6 +74,21 @@ func _process(delta):
 		player_vars.sanity -= sanityTick;
 		timeSinceLastSanityTick = 0;
 		sanityUpdate();
+	
+	sanityInt10 = int(player_vars.sanity/100)
+	
+	if sanityInt10 > 0 and 3 >= sanityInt10:
+		sanityString = "low"
+	
+	if sanityInt10 > 3 and 6 >= sanityInt10:
+		sanityString = "mid"
+	
+	if sanityInt10 > 6 and 10 >= sanityInt10:
+		sanityString = "high"
+	
+	if sanityString != GlobalAudio.current_sanity:
+		GlobalAudio.current_sanity = sanityString
+		update_music_for_sanity()
 		
 	if (Input.is_action_just_pressed("yield")):
 		if (not yielding):
@@ -77,6 +98,10 @@ func _process(delta):
 		else:
 			yielding = false;
 			$YieldPrompt.text = "PRESS Q TO YIELD"
+
+func update_music_for_sanity():
+	var current_sanity_music = str(sanityString + "sanity")
+	player_music_player["parameters/switch_to_clip"] = current_sanity_music
 
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
@@ -117,7 +142,7 @@ func _on_hazard_body_entered(body: Node2D) -> void:
 
 func _on_tutorial_pit_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://mainmenu.tscn")
-	resetafterexit()
+	resetafterexitorenter()
 	print("bye")
 
 func hurt():
@@ -125,14 +150,22 @@ func hurt():
 	updateHealthLabel();
 
 func updateHealthLabel():
+	print(player_vars.health)
 	if (player_vars.health >= 5):
 		$RightHand.animation = "0";
 		$LeftHand.animation = str(10-player_vars.health);
 	elif (player_vars.health >= 0):
 		$RightHand.animation = str(5-player_vars.health);
 		$LeftHand.animation = "5";
-	
-func resetafterexit():
+	elif (player_vars.health <= 0):
+		death()
+
+func death():
+	get_tree().change_scene_to_file("res://Scenes/Death_Screen.tscn")
+	resetafterexitorenter()
+	print("bleh")
+
+func resetafterexitorenter():
 	player_vars.health = 10
 	player_vars.sanity = 1000
 	
@@ -178,3 +211,9 @@ func entityPrioritize() -> Array:
 func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Rooms/level_2.tscn")
 	print("boo")
+
+
+func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
+	hurt()
+	print("buggy")
+	

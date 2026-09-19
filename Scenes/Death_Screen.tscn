@@ -1,10 +1,38 @@
 [gd_scene format=3 uid="uid://bc1mp4jlaokay"]
 
+[ext_resource type="Script" uid="uid://dluuex6scf8r7" path="res://Scenes/death_screen.gd" id="1_7jxpc"]
 [ext_resource type="Texture2D" uid="uid://ip5os44n60qk" path="res://Assets/YouDied.png" id="1_tviqd"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="3_ur8ss"]
+[ext_resource type="AudioStream" uid="uid://b51fx0ubeh17t" path="res://Audio/Music/Ballad of an Unfortunate Soul.mp3" id="4_ur8ss"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_7woiw"]
+stream_count = 1
+stream_0 = ExtResource("4_ur8ss")
 
 [node name="Node2D" type="Node2D" unique_id=1884366260]
+script = ExtResource("1_7jxpc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1559403833]
 position = Vector2(1285.3335, 725)
 scale = Vector2(10.041667, 10.041667)
 texture = ExtResource("1_tviqd")
+
+[node name="Button" type="Button" parent="." unique_id=1419257325]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1280.0
+offset_top = 720.0
+offset_right = 1345.0
+offset_bottom = 751.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme = ExtResource("3_ur8ss")
+text = "Restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2139623707]
+stream = SubResource("AudioStreamPlaylist_7woiw")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
