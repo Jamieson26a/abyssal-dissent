@@ -2,12 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://7ko78ny0k3do" path="res://Assets/Tilesets/rock-lava.png" id="1_4dfky"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4dfky"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dfky"]
 texture = ExtResource("1_4dfky")
 texture_region_size = Vector2i(64, 64)
 0:3/0 = 0
 0:3/0/terrain_set = 0
 0:3/0/terrain = 0
+0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_4dfky")
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 0:3/0/terrains_peering_bit/bottom_right_corner = 0
 0:3/0/terrains_peering_bit/bottom_left_corner = 0
 0:3/0/terrains_peering_bit/top_left_corner = 0
@@ -106,6 +111,8 @@ texture_region_size = Vector2i(64, 64)
 
 [resource]
 tile_size = Vector2i(64, 64)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "<any>"
 terrain_set_0/terrain_0/color = Color(0.93333334, 0.50980395, 0.93333334, 1)
