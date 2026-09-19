@@ -8,6 +8,7 @@ var sanityInt10: int
 var sanityString: String
 
 @export var player_music_player: AudioStreamPlayer
+@export var walk_music_player: AudioStreamPlayer2D
 
 var yielding: bool;
 
@@ -58,6 +59,10 @@ func _process(delta):
 			$Sprite2D.rotation_degrees = 90;
 		elif (direction == Vector2(0, -1) or direction.is_equal_approx(Vector2(-0.707107, -0.707107))):
 			$Sprite2D.rotation_degrees = 270;
+		if direction != Vector2(0,0):
+			walk_music_player["stream_paused"] = false
+		else:
+			walk_music_player["stream_paused"] = true
 	else:
 		direction = Vector2(0,0)
 		sanityTick = 20;
@@ -141,6 +146,9 @@ func sanityUpdate():
 	$RightHand/Eye.animation = str(level) + approvalStr;
 
 func _on_hazard_body_entered(body: Node2D) -> void:
+	hurt();
+
+func _on_spike_hazard_body_entered(body: Node2D) -> void:
 	hurt();
 
 func _on_tutorial_pit_body_entered(body: Node2D) -> void:

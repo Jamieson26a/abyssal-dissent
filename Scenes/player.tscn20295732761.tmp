@@ -811,11 +811,8 @@ data = PackedByteArray("//PkZAAdwg0kA6wwAJ9BUkgFT0gABTpwYBkOKXXMYzGEs2XLLxgYBbRA
 loop = true
 
 [node name="Player" type="CharacterBody2D" unique_id=1212776525 node_paths=PackedStringArray("player_music_player")]
-collision_layer = 5
-collision_mask = 5
 script = ExtResource("1_cvnsp")
 player_music_player = NodePath("AudioStreamPlayer")
-walk_music_player = NodePath("AudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870400138]
 position = Vector2(-0.27490425, 0.12493706)
@@ -823,7 +820,7 @@ scale = Vector2(0.99, 0.99)
 shape = SubResource("CircleShape2D_p2gqb")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
-position = Vector2(-9.536743e-07, 9.536743e-07)
+position = Vector2(0, 4.7683716e-07)
 scale = Vector2(10, 10)
 color = Color(0.6851872, 0.5650246, 0.37406167, 1)
 energy = 16.0
