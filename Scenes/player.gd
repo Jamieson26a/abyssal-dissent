@@ -8,7 +8,6 @@ func _ready():
 	player_vars = get_node("/root/PlayerVariables");
 	timeSinceLastSanityTick = 0;
 	sanityTick = 50;
-	$".."/sanity.text = str(sanity);
 	updateHealthLabel();
 	sanityUpdate();
 
@@ -17,14 +16,19 @@ func _process(delta):
 	velocity = direction * 1000;
 	move_and_slide();
 	if (direction.x == 1):
-		$Sprite2D.rotation_degrees = 90;
-	elif (direction.x == -1):
-		$Sprite2D.rotation_degrees = 270;
-	elif (direction.y == 1):
-		$Sprite2D.rotation_degrees = 180;
-	elif (direction.y == -1):
 		$Sprite2D.rotation_degrees = 0;
-	
+	elif (direction.x == -1):
+		$Sprite2D.rotation_degrees = 180;
+	elif (direction.y == 1):
+		$Sprite2D.rotation_degrees = 90;
+	elif (direction.y == -1):
+		$Sprite2D.rotation_degrees = 270;
+		
+	if (direction.length() > 0):
+		$Sprite2D.play("walking")
+	else:
+		$Sprite2D.animation = "default"
+		
 	timeSinceLastSanityTick += delta;
 	if (timeSinceLastSanityTick >= 1):
 		player_vars.sanity -= sanityTick;
