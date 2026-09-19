@@ -15,14 +15,19 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="abyssal-dissent"
-run/main_scene="uid://rat6h76276eu"
+run/main_scene="uid://cwk5vp2r7ijbx"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://54hk1j0ojg5p"
+PlayerVariables="*uid://dmvyibhw6hjik"
+
 [display]
 
-window/size/viewport_width=2560
-window/size/viewport_height=1440
+window/size/viewport_width=1860
+window/size/viewport_height=880
 window/stretch/mode="viewport"
 
 [editor_plugins]

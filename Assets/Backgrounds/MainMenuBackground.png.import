@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t20dgrjecn2g"
-path="res://.godot/imported/waste_no_space_64x64_gui.png-ef393b89e04c9fd96ed287e8f07e3c14.ctex"
+uid="uid://c1tt1pljoagc0"
+path="res://.godot/imported/MainMenuBackground.png-5bc7cf4534dc4cccbb6b192b08dae08b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/waste_no_space/textures/waste_no_space_64x64_gui.png"
-dest_files=["res://.godot/imported/waste_no_space_64x64_gui.png-ef393b89e04c9fd96ed287e8f07e3c14.ctex"]
+source_file="res://Assets/Backgrounds/MainMenuBackground.png"
+dest_files=["res://.godot/imported/MainMenuBackground.png-5bc7cf4534dc4cccbb6b192b08dae08b.ctex"]
 
 [params]
 

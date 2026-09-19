@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pq6u5d6tqvir"
+path="res://.godot/imported/Mid Sanity 1.mp3-a1d006c758826c7bc3d84660966b63d9.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Mid Sanity 1.mp3"
+dest_files=["res://.godot/imported/Mid Sanity 1.mp3-a1d006c758826c7bc3d84660966b63d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

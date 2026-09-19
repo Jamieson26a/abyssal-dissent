@@ -1,11 +1,10 @@
 extends CharacterBody2D
-var health: int;
 var sanity: float;
 var timeSinceLastSanityTick: float;
 var sanityTick: float;
+var player_vars = get_node("/root/PlayerVariables")
 
 func _ready():
-	health = 10
 	sanity = 1000;
 	timeSinceLastSanityTick = 0;
 	sanityTick = 1;
@@ -14,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down");
-	velocity = direction * 500;
+	velocity = direction * 1000;
 	move_and_slide();
 	if (direction.x == 1):
 		$Sprite2D.rotation_degrees = 90;
@@ -37,13 +36,19 @@ func _on_hazard_body_entered(body: Node2D) -> void:
 	hurt();
 
 func hurt():
-	health -= 1;
+	player_vars.health -= 1;
 	updateHealthLabel();
 
 func updateHealthLabel():
-	if (health >= 5):
-		$".."/RightHand.animation = "0";
-		$".."/LeftHand.animation = str(10-health);
-	elif (health >= 0):
-		$".."/RightHand.animation = str(5-health);
-		$".."/LeftHand.animation = "5";
+	player_vars.health -= 1
+	updateLabel();
+	
+
+
+func updateLabel():
+	if (player_vars.health >= 5):
+		$RightHand.animation = "0";
+		$LeftHand.animation = str(10-player_vars.health);
+	elif (player_vars.health >= 0):
+		$RightHand.animation = str(5-player_vars.health);
+		$LeftHand.animation = "5";

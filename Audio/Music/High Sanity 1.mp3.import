@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgcroigg66y6o"
+path="res://.godot/imported/High Sanity 1.mp3-be3ddf36a2cddd950b1aa8148c2ee981.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/High Sanity 1.mp3"
+dest_files=["res://.godot/imported/High Sanity 1.mp3-be3ddf36a2cddd950b1aa8148c2ee981.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

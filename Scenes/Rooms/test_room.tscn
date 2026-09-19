@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://djn8vwcrx78xi" path="res://Assets/HealthSanityHands/left-hands/4.png" id="16_cxbbm"]
 [ext_resource type="Texture2D" uid="uid://dl7gbww7la3y5" path="res://Assets/HealthSanityHands/left-hands/5.png" id="17_ayyv0"]
 [ext_resource type="PackedScene" uid="uid://cqvgcr2p4o5jj" path="res://Scenes/interactable.tscn" id="20_wrdol"]
+[ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="18_bhbxm"]
+[ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="19_xg81v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c42wt"]
 texture = ExtResource("3_wrd0h")
@@ -605,6 +607,11 @@ animations = [{
 "name": &"5",
 "speed": 5.0
 }]
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_loy4s"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("19_xg81v")
+stream_1 = ExtResource("18_bhbxm")
 
 [node name="TestRoom" type="Node2D" unique_id=937557353]
 script = ExtResource("1_xg81v")
@@ -618,16 +625,10 @@ godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
 [node name="hazard" parent="." unique_id=1244506505 instance=ExtResource("5_c42wt")]
-position = Vector2(920, 1000)
+position = Vector2(1159, 1207)
 
 [node name="Player" parent="." unique_id=1070948515 instance=ExtResource("4_8k5sq")]
-position = Vector2(1999, 1039)
-
-[node name="RightHand" type="AnimatedSprite2D" parent="." unique_id=1522993834]
-position = Vector2(2409, 199.12488)
-scale = Vector2(1.637499, 1.637499)
-sprite_frames = SubResource("SpriteFrames_4fppj")
-animation = &"0"
+position = Vector2(-802, 505)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RightHand" unique_id=1353808483]
 texture_filter = 1
@@ -640,6 +641,9 @@ position = Vector2(150, 198.00002)
 scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_1m8my")
 animation = &"0"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1260120501]
+stream = SubResource("AudioStreamPlaylist_loy4s")
+autoplay = true
 
 [node name="sanity" type="Label" parent="." unique_id=1813874938]
 offset_left = 36.0
