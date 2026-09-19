@@ -641,6 +641,7 @@ clip_2/auto_advance = 0
 clip_3/name = &"lowsanity"
 clip_3/stream = SubResource("AudioStreamPlaylist_utwdy")
 clip_3/auto_advance = 0
+initial_clip = 1
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1.0,

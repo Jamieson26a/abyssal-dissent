@@ -77,13 +77,21 @@ func hurt():
 	updateHealthLabel();
 
 func updateHealthLabel():
+	print(player_vars.health)
 	if (player_vars.health >= 5):
 		$RightHand.animation = "0";
 		$LeftHand.animation = str(10-player_vars.health);
 	elif (player_vars.health >= 0):
 		$RightHand.animation = str(5-player_vars.health);
 		$LeftHand.animation = "5";
-	
+	elif (player_vars.health <= 0):
+		death()
+
+func death():
+	get_tree().change_scene_to_file("res://Scenes/Death_Screen.tscn")
+	resetafterexitorenter()
+	print("bleh")
+
 func resetafterexitorenter():
 	player_vars.health = 10
 	player_vars.sanity = 1000
