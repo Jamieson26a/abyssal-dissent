@@ -17,4 +17,4 @@ godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
 [node name="Player" parent="." unique_id=1212776525 instance=ExtResource("6_l2j73")]
-position = Vector2(-1160, -522)
+position = Vector2(221, 249)

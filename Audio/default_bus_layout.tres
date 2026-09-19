@@ -8,6 +8,10 @@ damping = 0.25
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_ddrg4"]
 resource_name = "Reverb"
 
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_ai37j"]
+resource_name = "LowPassFilter"
+cutoff_hz = 6000.0
+
 [resource]
 bus/1/name = &"music"
 bus/1/solo = false
@@ -25,3 +29,5 @@ bus/2/volume_db = 0.0
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectReverb_ddrg4")
 bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectLowPassFilter_ai37j")
+bus/2/effect/1/enabled = true
