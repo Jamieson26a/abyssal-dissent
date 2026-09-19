@@ -79,7 +79,8 @@ func _process(delta):
 		
 	timeSinceLastSanityTick += delta;
 	if (timeSinceLastSanityTick >= 1):
-		player_vars.sanity -= sanityTick;
+		if (player_vars.sanity > sanityTick):
+			player_vars.sanity -= sanityTick;
 		timeSinceLastSanityTick = 0;
 		sanityUpdate();
 	
@@ -232,7 +233,8 @@ func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
 
 
 func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
-	hurt()
+	if (body == self):
+		hurt()
 
 func _on_lava_entered(body: Node2D) -> void:
 	if (body == self):
@@ -243,5 +245,8 @@ func spawnMob():
 	var positions = $"..".spawnPositions;
 	var buggy = load("res://Assets/buggy.tscn").instantiate();
 	buggy.position = positions.pick_random();
+	buggy.scale.x = 2.0;
+	buggy.scale.y = 2.0;
+	buggy.get_node("Buggy hit Box").body_entered.connect(_on_buggy_hit_box_body_entered);
 	$"..".add_child(buggy);
 	

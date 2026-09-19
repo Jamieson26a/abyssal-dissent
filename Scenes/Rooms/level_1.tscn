@@ -307,27 +307,31 @@ position = Vector2(151, 1048)
 position = Vector2(771, 783)
 scale = Vector2(2, 2)
 
+[node name="Buggy hit Box" parent="Buggy" index="0" unique_id=1942087536]
+collision_mask = 3
+
 [node name="bug sprite" parent="Buggy" index="1" unique_id=1116446087]
 frame_progress = 0.8085095
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1756588978]
+[node name="Lava" type="StaticBody2D" parent="." unique_id=1756588978]
 position = Vector2(1600, 375)
 collision_layer = 6
-collision_mask = 4
+collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1508287650]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava" unique_id=1508287650]
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_4fppj")
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=1662780721]
+[node name="LavaArea2D" type="Area2D" parent="Lava" unique_id=1662780721]
 position = Vector2(-2, 2)
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=972748252]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava/LavaArea2D" unique_id=972748252]
 position = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_p2gqb")
 
 [connection signal="body_entered" from="Next_Room_Pit_1" to="Player" method="_on_next_room_pit_1_body_entered"]
 [connection signal="body_entered" from="Buggy/Buggy hit Box" to="Player" method="_on_buggy_hit_box_body_entered"]
-[connection signal="body_entered" from="StaticBody2D/Area2D" to="Player" method="_on_lava_entered"]
 
 [editable path="Buggy"]
