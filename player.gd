@@ -34,7 +34,6 @@ func actor_setup():
 func set_movement_target(movement_target: Vector2):
 	currentTarget = movement_target;
 	navigation_agent.set_target_position(movement_target)
-	print("target set o7")
 
 func _process(delta):
 	var direction;
@@ -42,21 +41,25 @@ func _process(delta):
 		sanityTick = 5;
 		direction = Input.get_vector("left", "right", "up", "down");
 		velocity = direction * 750;
+		print(direction)
 		move_and_slide();
-		if (direction.x == 1):
+		if (direction == Vector2(1, 0) or direction.is_equal_approx(Vector2(0.707107, -0.707107))):
 			$Sprite2D.rotation_degrees = 0;
-		elif (direction.x == -1):
+		elif (direction == Vector2(-1, 0) or direction.is_equal_approx(Vector2(-0.707107, 0.707107))):
 			$Sprite2D.rotation_degrees = 180;
-		elif (direction.y == 1):
+		elif (direction == Vector2(0, 1) or direction.is_equal_approx(Vector2(0.707107, 0.707107))):
 			$Sprite2D.rotation_degrees = 90;
-		elif (direction.y == -1):
+		elif (direction == Vector2(0, -1) or direction.is_equal_approx(Vector2(-0.707107, -0.707107))):
 			$Sprite2D.rotation_degrees = 270;
 	else:
 		direction = Vector2(0,0)
 		sanityTick = 20;
 		
 	if (direction.length() > 0):
-		$Sprite2D.play("walking")
+		if (abs(direction.x) < 1 and abs(direction.y) < 1):
+			$Sprite2D.play("walkingDiagonal")
+		else:
+			$Sprite2D.play("walking")
 	else:
 		$Sprite2D.animation = "default"
 		
@@ -78,15 +81,14 @@ func _process(delta):
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
 		nextTask();
-		print("finished task?")
 		return
 
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 	
 	if (yielding):
-		velocity = current_agent_position.direction_to(next_path_position) * movement_speed
-		print(velocity)
+		var direction = current_agent_position.direction_to(next_path_position)
+		velocity = direction * movement_speed
 		move_and_slide();
 		if (velocity.x >= abs(velocity.y)):
 			$Sprite2D.rotation_degrees = 0;
@@ -157,7 +159,7 @@ func entityPrioritize() -> Array:
 			while (index < priorities.size()):
 				if (index == 0):
 					index += 1;
-				if (priorities[index] >= priorities[index - 1]):
+				if (priorities[index] <= priorities[index - 1]):
 					index += 1;
 				else:
 					var temp = priorities[index];
