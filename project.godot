@@ -28,6 +28,8 @@ PlayerVariables="*uid://dmvyibhw6hjik"
 
 window/size/viewport_width=2560
 window/size/viewport_height=1440
+window/size/mode=1
+eb21a4d1720dae82bfb9d484f4d5d3689b43f0cc
 window/stretch/mode="viewport"
 
 [editor_plugins]
