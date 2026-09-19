@@ -5,5 +5,5 @@ var eldritchActions: Dictionary;
 func _ready() -> void:
 	# Format: [Position of action, base priority, approval weight]
 	eldritchActions = {
-		"end": [Vector2(167.0, 1276.0), 1, 1]
+		"end": [Vector2(151.0, 1048.0), 1, 1]
 	}

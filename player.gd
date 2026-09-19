@@ -88,6 +88,14 @@ func _physics_process(delta):
 		velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 		print(velocity)
 		move_and_slide();
+		if (velocity.x >= abs(velocity.y)):
+			$Sprite2D.rotation_degrees = 0;
+		elif (velocity.x <= -abs(velocity.y)):
+			$Sprite2D.rotation_degrees = 180;
+		elif (velocity.y > 0):
+			$Sprite2D.rotation_degrees = 90;
+		elif (velocity.y < 0):
+			$Sprite2D.rotation_degrees = 270;
 
 func sanityUpdate():
 	var level:int = int(player_vars.sanity/100) + 1;
