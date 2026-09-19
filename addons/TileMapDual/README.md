@@ -14,12 +14,12 @@ More info on the [v5 discussion](https://github.com/pablogila/TileMapDual/issues
 - [Introducing TileMapDual](#introducing-tilemapdual)
 - [Installation](#installation)
 - [Usage](#usage)
-    - [Basic usage](#basic-usage)
-    - [Isometric tiles](#isometric-tiles)
-    - [Hex tiles and more](#hex-tiles-and-more)
-    - [Multiple terrains](#multiple-terrains)
-    - [Collisions](#collisions)
-    - [TileMapDualLegacy stable version](#tilemapduallegacy-stable-version)
+	- [Basic usage](#basic-usage)
+	- [Isometric tiles](#isometric-tiles)
+	- [Hex tiles and more](#hex-tiles-and-more)
+	- [Multiple terrains](#multiple-terrains)
+	- [Collisions](#collisions)
+	- [TileMapDualLegacy stable version](#tilemapduallegacy-stable-version)
 - [Contributing](#contributing)
 - [FAQ and troubleshoot](#faq-and-troubleshoot)
 - [License](#license)
@@ -124,12 +124,12 @@ We thank all [code contributors](https://github.com/pablogila/TileMapDual/graphs
 This repo is currently managed by:
 
 - [pablogila](https://github.com/pablogila) (first dev)
-    - [Bluesky (@GilaPixel.bsky.social)](https://bsky.app/profile/gilapixel.bsky.social)
-    - [YouTube (@GilaPixel)](https://www.youtube.com/@gilapixel)
-    - [Instagram (@GilaPixel)](https://www.instagram.com/gilapixel/)
-    - [Mastodon (@GilaPixel@mastodon.gamedev.place)](https://mastodon.gamedev.place/@GilaPixel)
-    - [Twitter (@GilaPixel)](https://x.com/gilapixel)
-    - [Reddit (/u/pgilah)](https://www.reddit.com/u/pgilah/)
+	- [Bluesky (@GilaPixel.bsky.social)](https://bsky.app/profile/gilapixel.bsky.social)
+	- [YouTube (@GilaPixel)](https://www.youtube.com/@gilapixel)
+	- [Instagram (@GilaPixel)](https://www.instagram.com/gilapixel/)
+	- [Mastodon (@GilaPixel@mastodon.gamedev.place)](https://mastodon.gamedev.place/@GilaPixel)
+	- [Twitter (@GilaPixel)](https://x.com/gilapixel)
+	- [Reddit (/u/pgilah)](https://www.reddit.com/u/pgilah/)
 
 - [raffimolero](https://github.com/raffimolero) (since v5)
 
@@ -184,4 +184,3 @@ This project is Open Source Software, released under the [MIT license](LICENSE).
 - [Wang Tile Set Creator](https://github.com/kleingeist37/godot-wang-converter)
 - [Webtyler tool, to convert from 15-tile sets to 47-tile sets](https://wareya.github.io/webtyler/)
 - Sources for [snowflake svg](https://pixsector.com/icon/free-snowflake-svg-vectorart/967) and [water svg](https://www.svgrepo.com/svg/103674/water-drop)
-
