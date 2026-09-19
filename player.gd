@@ -3,6 +3,7 @@ var sanity: float;
 var timeSinceLastSanityTick: float;
 var sanityTick: float;
 var player_vars;
+var globalAudio;
 var sanityInt10: int
 var sanityString: String
 
@@ -18,6 +19,7 @@ var movement_speed: float = 200.0;
 
 func _ready():
 	player_vars = get_node("/root/PlayerVariables");
+	globalAudio = get_node("/root/GlobalAudio");
 	timeSinceLastSanityTick = 0;
 	sanityInt10 = int(player_vars.sanity/100)
 	sanityTick = 5;
@@ -86,8 +88,8 @@ func _process(delta):
 	if sanityInt10 > 6 and 10 >= sanityInt10:
 		sanityString = "high"
 	
-	if sanityString != GlobalAudio.current_sanity:
-		GlobalAudio.current_sanity = sanityString
+	if sanityString != globalAudio.current_sanity:
+		globalAudio.current_sanity = sanityString
 		update_music_for_sanity()
 		
 	if (Input.is_action_just_pressed("yield")):
