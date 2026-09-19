@@ -67,6 +67,9 @@ func sanityUpdate():
 func _on_hazard_body_entered(body: Node2D) -> void:
 	hurt();
 
+func _on_spike_hazard_body_entered(body: Node2D) -> void:
+	hurt();
+
 func _on_tutorial_pit_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://mainmenu.tscn")
 	resetafterexitorenter()
