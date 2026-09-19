@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://xxm2nuivpmr5" path="res://Scenes/hazard.tscn" id="5_c42wt"]
 [ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="18_bhbxm"]
 [ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="19_xg81v"]
+[ext_resource type="PackedScene" uid="uid://doj82f7vdyk5m" path="res://Scenes/interactable.tscn" id="20_wrdol"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c42wt"]
 texture = ExtResource("3_wrd0h")
@@ -162,5 +163,8 @@ position = Vector2(-802, 505)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1260120501]
 stream = SubResource("AudioStreamPlaylist_loy4s")
 autoplay = true
+
+[node name="Interactable" parent="." unique_id=541755134 instance=ExtResource("20_wrdol")]
+position = Vector2(521, 674)
 
 [connection signal="body_entered" from="hazard" to="Player" method="_on_hazard_body_entered"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://doj82f7vdyk5m"]
+
+[ext_resource type="Texture2D" uid="uid://jny3ubhe77fm" path="res://Assets/HealthSanityHands/left-hands/0.png" id="1_8s6bd"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="2_pmsje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fppj"]
+size = Vector2(78, 110)
+
+[node name="Interactable" type="Area2D" unique_id=541755134]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=886024065]
+shape = SubResource("RectangleShape2D_4fppj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=823353072]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8s6bd")
+
+[node name="Label" type="Label" parent="." unique_id=304273955]
+visible = false
+offset_left = 41.0
+offset_top = -70.0
+offset_right = 151.0
+offset_bottom = -33.0
+theme = ExtResource("2_pmsje")
+theme_override_font_sizes/font_size = 32
+text = "PRESS E"
