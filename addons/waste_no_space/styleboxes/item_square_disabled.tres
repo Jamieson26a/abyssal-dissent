@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ct7iog5kim2xn"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://ct7iog5kim2xn"]
 
 [ext_resource type="Texture2D" uid="uid://t20dgrjecn2g" path="res://addons/waste_no_space/textures/waste_no_space_64x64_gui.png" id="1_b50r6"]
 
