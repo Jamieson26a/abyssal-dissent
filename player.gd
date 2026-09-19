@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down");
-	velocity = direction * 1000;
+	velocity = direction * 750;
 	move_and_slide();
 	if (direction.x == 1):
 		$Sprite2D.rotation_degrees = 0;
@@ -63,3 +63,7 @@ func resetafterexit():
 	player_vars.health = 10
 	player_vars.sanity = 1000
 	
+
+func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Scenes/Rooms/level_2.tscn")
+	print("boo")

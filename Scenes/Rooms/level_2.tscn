@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://b0jrceg1nb081"]
 
-[ext_resource type="Script" uid="uid://cg80pkpg87xkv" path="res://player.gd" id="1_egmrw"]
 [ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="2_67myx"]
 [ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="3_t63ty"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="4_j2qwa"]
@@ -146,7 +145,6 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_vx1o4")
 
 [node name="level_2" type="Node2D" unique_id=1247788433]
-script = ExtResource("1_egmrw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=433064660]
 stream = SubResource("AudioStreamPlaylist_bp53s")
@@ -161,4 +159,4 @@ godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
 [node name="Player" parent="." unique_id=1212776525 instance=ExtResource("6_l2j73")]
-position = Vector2(-1160, -557)
+position = Vector2(-1160, -522)

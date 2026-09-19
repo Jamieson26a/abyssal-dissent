@@ -608,10 +608,10 @@ scale = Vector2(0.99, 0.99)
 shape = SubResource("CircleShape2D_p2gqb")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1288046632]
+modulate = Color(0.36737418, 0.33063155, 0.97762865, 1)
 position = Vector2(1280, 720)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_4fppj")
-frame_progress = 0.18479402
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293886085]
 position = Vector2(1280, 719)
@@ -637,10 +637,11 @@ animation = &"0"
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
 position = Vector2(1280, 720)
 scale = Vector2(10, 10)
-color = Color(1, 1, 0, 1)
-blend_mode = 2
+color = Color(0.45464367, 0.3631669, 0.21956548, 1)
+energy = 3.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 1
 texture = ExtResource("17_qqcod")
-texture_scale = 0.1
+texture_scale = 0.3
+height = 238.0

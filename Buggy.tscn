@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bx81t2omoxatg"]
+
+[ext_resource type="Texture2D" uid="uid://dnkg8do6e07ap" path="res://Assets/Centipede.png" id="1_64d5e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc8wn"]
+atlas = ExtResource("1_64d5e")
+region = Rect2(147, 0, 118, 1438)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3pel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc8wn")
+}],
+"loop": 1,
+"name": &"Stand",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D" unique_id=1420825133]
+sprite_frames = SubResource("SpriteFrames_j3pel")
+animation = &"Stand"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=191826284]
