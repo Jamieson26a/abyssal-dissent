@@ -18,6 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://djn8vwcrx78xi" path="res://Assets/HealthSanityHands/left-hands/4.png" id="13_2ijsl"]
 [ext_resource type="Texture2D" uid="uid://dl7gbww7la3y5" path="res://Assets/HealthSanityHands/left-hands/5.png" id="14_p1odr"]
 [ext_resource type="Texture2D" uid="uid://bto7hpqjp8ciw" path="res://light.png" id="17_qqcod"]
+[ext_resource type="AudioStream" uid="uid://b51fx0ubeh17t" path="res://Audio/Music/Ballad of an Unfortunate Soul.mp3" id="18_bi64h"]
+[ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="18_fs7ks"]
+[ext_resource type="AudioStream" uid="uid://dgcroigg66y6o" path="res://Audio/Music/High Sanity 1.mp3" id="19_2ijsl"]
+[ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="19_l6n3p"]
+[ext_resource type="AudioStream" uid="uid://cvplm5vouqevq" path="res://Audio/Music/Low Sanity 1.mp3" id="22_p1odr"]
+[ext_resource type="AudioStream" uid="uid://c0ipj3q8c2031" path="res://Audio/Music/Low Sanity 2.mp3" id="23_0gysh"]
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="18_igrcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2gqb"]
@@ -730,13 +736,96 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1212776525]
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_girky"]
+stream_count = 1
+stream_0 = ExtResource("18_bi64h")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_10qfh"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("19_2ijsl")
+stream_1 = ExtResource("18_bi64h")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_20ejv"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("19_l6n3p")
+stream_1 = ExtResource("18_fs7ks")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_utwdy"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("22_p1odr")
+stream_1 = ExtResource("23_0gysh")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ai37j"]
+clip_count = 4
+clip_0/name = &"tutorial"
+clip_0/stream = SubResource("AudioStreamPlaylist_girky")
+clip_0/auto_advance = 0
+clip_1/name = &"highsanity"
+clip_1/stream = SubResource("AudioStreamPlaylist_10qfh")
+clip_1/auto_advance = 0
+clip_2/name = &"midsanity"
+clip_2/stream = SubResource("AudioStreamPlaylist_20ejv")
+clip_2/auto_advance = 0
+clip_3/name = &"lowsanity"
+clip_3/stream = SubResource("AudioStreamPlaylist_utwdy")
+clip_3/auto_advance = 0
+initial_clip = 1
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(0, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(2, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(3, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=1212776525 node_paths=PackedStringArray("player_music_player")]
 script = ExtResource("1_cvnsp")
+player_music_player = NodePath("AudioStreamPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870400138]
 position = Vector2(-0.27490425, 0.12493706)
 scale = Vector2(0.99, 0.99)
 shape = SubResource("CircleShape2D_p2gqb")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
+position = Vector2(1280, 720)
+scale = Vector2(10, 10)
+color = Color(0.45464367, 0.3631669, 0.21956548, 1)
+energy = 16.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 1
+texture = ExtResource("17_qqcod")
+texture_scale = 0.3
+height = 238.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1288046632]
 modulate = Color(0.36737418, 0.33063155, 0.97762865, 1)
@@ -766,17 +855,12 @@ scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_vfarp")
 animation = &"0"
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
-position = Vector2(-0.27490425, 0.12493706)
-scale = Vector2(10, 10)
-color = Color(0.45464367, 0.3631669, 0.21956548, 1)
-energy = 3.0
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-shadow_filter = 1
-texture = ExtResource("17_qqcod")
-texture_scale = 0.3
-height = 238.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=50988425]
+stream = SubResource("AudioStreamInteractive_ai37j")
+autoplay = true
+bus = &"music"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [node name="YieldPrompt" type="Label" parent="." unique_id=947397764]
 offset_left = -406.27502
@@ -794,4 +878,3 @@ horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=885390255]
-avoidance_enabled = true
