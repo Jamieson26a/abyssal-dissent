@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://578fsl0eg2jy"]
 
 [ext_resource type="Texture2D" uid="uid://dnkg8do6e07ap" path="res://Assets/Centipede.png" id="1_w7d4w"]
+[ext_resource type="Script" uid="uid://46qsgw6bga1q" path="res://Assets/buggy.gd" id="1_ysbpy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1gls"]
 radius = 56.0
@@ -68,6 +69,7 @@ height = 44.0
 [node name="Buggy" type="CharacterBody2D" unique_id=2102165395]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_ysbpy")
 
 [node name="Buggy hit Box" type="Area2D" parent="." unique_id=1942087536]
 
@@ -89,3 +91,5 @@ scale = Vector2(0.25, 0.25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1450964034]
 position = Vector2(-2, 0)
 shape = SubResource("CapsuleShape2D_y6u56")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1876997731]
