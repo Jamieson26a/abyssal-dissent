@@ -37,3 +37,10 @@ func _physics_process(delta):
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
+
+
+func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
+	print("hit");
+	if body.name.contains("Lava"):
+		print("lava bug");
+		self.queue_free();
