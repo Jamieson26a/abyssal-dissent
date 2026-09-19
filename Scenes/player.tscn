@@ -20,11 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://bto7hpqjp8ciw" path="res://light.png" id="17_qqcod"]
 [ext_resource type="AudioStream" uid="uid://b51fx0ubeh17t" path="res://Audio/Music/Ballad of an Unfortunate Soul.mp3" id="18_bi64h"]
 [ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="18_fs7ks"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="18_igrcy"]
 [ext_resource type="AudioStream" uid="uid://dgcroigg66y6o" path="res://Audio/Music/High Sanity 1.mp3" id="19_2ijsl"]
 [ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="19_l6n3p"]
 [ext_resource type="AudioStream" uid="uid://cvplm5vouqevq" path="res://Audio/Music/Low Sanity 1.mp3" id="22_p1odr"]
 [ext_resource type="AudioStream" uid="uid://c0ipj3q8c2031" path="res://Audio/Music/Low Sanity 2.mp3" id="23_0gysh"]
-[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="18_igrcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2gqb"]
 radius = 24.242432
@@ -807,6 +807,8 @@ Vector2i(3, -1): {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1212776525 node_paths=PackedStringArray("player_music_player")]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_cvnsp")
 player_music_player = NodePath("AudioStreamPlayer")
 
@@ -816,7 +818,7 @@ scale = Vector2(0.99, 0.99)
 shape = SubResource("CircleShape2D_p2gqb")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1284615364]
-position = Vector2(1280, 720)
+position = Vector2(-9.536743e-07, 9.536743e-07)
 scale = Vector2(10, 10)
 color = Color(0.45464367, 0.3631669, 0.21956548, 1)
 energy = 16.0
@@ -860,8 +862,6 @@ stream = SubResource("AudioStreamInteractive_ai37j")
 autoplay = true
 bus = &"music"
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
-
 [node name="YieldPrompt" type="Label" parent="." unique_id=947397764]
 offset_left = -406.27502
 offset_top = 608.1249
@@ -878,3 +878,5 @@ horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=885390255]
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

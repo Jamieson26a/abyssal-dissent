@@ -49,7 +49,6 @@ func _process(delta):
 		sanityTick = 5;
 		direction = Input.get_vector("left", "right", "up", "down");
 		velocity = direction * 750;
-		print(direction)
 		move_and_slide();
 		if (direction == Vector2(1, 0) or direction.is_equal_approx(Vector2(0.707107, -0.707107))):
 			$Sprite2D.rotation_degrees = 0;
@@ -100,6 +99,8 @@ func _process(delta):
 		else:
 			yielding = false;
 			$YieldPrompt.text = "PRESS Q TO YIELD"
+			set_collision_layer_value(3, true);
+			set_collision_mask_value(3, true);
 
 func update_music_for_sanity():
 	var current_sanity_music = str(sanityString + "sanity")
@@ -145,14 +146,12 @@ func _on_hazard_body_entered(body: Node2D) -> void:
 func _on_tutorial_pit_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://mainmenu.tscn")
 	resetafterexitorenter()
-	print("bye")
 
 func hurt():
 	player_vars.health -= 1
 	updateHealthLabel();
 
 func updateHealthLabel():
-	print(player_vars.health)
 	if (player_vars.health >= 5):
 		$RightHand.animation = "0";
 		$LeftHand.animation = str(10-player_vars.health);
@@ -165,7 +164,6 @@ func updateHealthLabel():
 func death():
 	get_tree().change_scene_to_file("res://Scenes/Death_Screen.tscn")
 	resetafterexitorenter()
-	print("bleh")
 
 func resetafterexitorenter():
 	player_vars.health = 10
@@ -174,6 +172,8 @@ func resetafterexitorenter():
 func yieldToEntity():
 	taskPositions = entityPrioritize();
 	nextTask();
+	set_collision_layer_value(3, false);
+	set_collision_mask_value(3, false);
 	
 func nextTask():
 	if (taskPositions.size() != 0):
@@ -212,10 +212,11 @@ func entityPrioritize() -> Array:
 
 func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Rooms/level_2.tscn")
-	print("boo")
 
 
 func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
 	hurt()
-	print("buggy")
-	
+
+func _on_lava_entered(body: Node2D) -> void:
+	if (not yielding):
+		hurt();
