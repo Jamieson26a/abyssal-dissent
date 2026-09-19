@@ -27,10 +27,10 @@ func _on_hazard_body_entered(body: Node2D) -> void:
 
 func updateLabel():
 	var player_vars = get_node("/root/PlayerVariables")
-	if (health >= 5):
+	if (player_vars.health >= 5):
 		$RightHand.animation = "0";
 		$LeftHand.animation = str(10-player_vars.health);
 		print("ow")
-	elif (health >= 0):
+	elif (player_vars.health >= 0):
 		$RightHand.animation = str(5-player_vars.health);
 		$LeftHand.animation = "5";

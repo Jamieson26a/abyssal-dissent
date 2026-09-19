@@ -23,11 +23,12 @@ config/icon="res://icon.svg"
 
 Global="*uid://54hk1j0ojg5p"
 PlayerVariables="*uid://dmvyibhw6hjik"
+SceneLoader="*uid://cy7ypscjk830h"
 
 [display]
 
-window/size/viewport_width=1860
-window/size/viewport_height=880
+window/size/viewport_width=2560
+window/size/viewport_height=1440
 window/stretch/mode="viewport"
 
 [editor_plugins]
