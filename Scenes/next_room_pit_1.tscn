@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8sm2xyiki83d"]
 
 [ext_resource type="Script" uid="uid://cb83prwr5cow6" path="res://Scenes/next_room_pit_1.gd" id="1_0e4m3"]
-[ext_resource type="Texture2D" uid="uid://cydq1jokap0sk" path="res://Assets/pit.png" id="2_0e4m3"]
+[ext_resource type="Texture2D" uid="uid://iojgl0xyadk4" path="res://Assets/pit.png" id="2_0e4m3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7woiw"]
 size = Vector2(128, 128)
@@ -10,7 +10,8 @@ size = Vector2(128, 128)
 script = ExtResource("1_0e4m3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=105977048]
-scale = Vector2(2, 2)
+self_modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_0e4m3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1002951456]

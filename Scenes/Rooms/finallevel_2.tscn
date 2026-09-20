@@ -529,6 +529,7 @@ godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
 [node name="walls" type="TileMapLayer" parent="." unique_id=946269805]
+modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
 position = Vector2(32, 32)
 tile_map_data = PackedByteArray("AAANABwAAAABAAMAAAANAB0AAAABAAEAAAAOABwAAAADAAAAAAAPABwAAAADAAAAAAAQABwAAAADAAAAAAARABwAAAADAAAAAAASABwAAAADAAAAAAATABwAAAADAAAAAAAUABwAAAADAAAAAAAVABwAAAADAAAAAAAWABwAAAABAAEAAAAYACQAAAADAAEAAAAZACMAAAADAAEAAAAaACIAAAADAAEAAAAbACEAAAADAAEAAAAZACQAAAADAAMAAAAaACMAAAADAAMAAAAbACIAAAADAAMAAAAZACwAAAADAAAAAAAaACwAAAADAAAAAAAdADIAAAABAAIAAAAeADIAAAABAAIAAAAfADIAAAABAAIAAAAaADQAAAABAAIAAAAbADQAAAADAAMAAAAcADMAAAADAAMAAAAgADIAAAADAAMAAAAbADMAAAADAAEAAAAcADIAAAADAAEAAAAgADEAAAADAAEAAAAbACsAAAABAAMAAAAcACoAAAABAAMAAAAdACoAAAADAAAAAAAbACwAAAABAAEAAAAcACsAAAABAAEAAAA=")
 tile_set = ExtResource("7_loxrx")
@@ -536,10 +537,6 @@ tile_set = ExtResource("7_loxrx")
 [node name="Next_Room_Pit_1" parent="." unique_id=1989462336 instance=ExtResource("8_f0mly")]
 position = Vector2(3111, 3732.9998)
 scale = Vector2(2.5, 2.5)
-
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
-position = Vector2(16, 61)
-collision_mask = 13
 
 [node name="Lava" type="StaticBody2D" parent="." unique_id=2144762109]
 position = Vector2(1430.0001, 2057)
@@ -753,6 +750,10 @@ navigation_polygon = SubResource("NavigationPolygon_amgph")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=14567228]
 position = Vector2(3201, 3725)
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
+position = Vector2(16, 61)
+collision_mask = 13
 
 [connection signal="body_entered" from="Next_Room_Pit_1" to="Player" method="_on_next_room_pit_1_body_entered"]
 [connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]
