@@ -600,10 +600,6 @@ rotation = -0.4276056
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_dccjw")
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_ocld5")]
-position = Vector2(16, 61)
-collision_mask = 13
-
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=385115341]
 position = Vector2(485, -686)
 color = Color(0.9397593, 0.7426324, 0.5284528, 1)
@@ -778,11 +774,9 @@ rotation = -0.40806526
 scale = Vector2(1.2631384, 4.3457737)
 shape = SubResource("RectangleShape2D_4fppj")
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_ocld5")]
+[node name="Player" parent="." unique_id=1499564952 instance=ExtResource("8_ocld5")]
 position = Vector2(16, 61)
 collision_mask = 13
 
-[connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
-[connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]
 [connection signal="body_entered" from="Lava2/LavaArea2D" to="TileMapDual" method="_on_lava_entered"]
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

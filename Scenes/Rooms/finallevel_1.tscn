@@ -539,7 +539,8 @@ position = Vector2(-339, 1251)
 scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" parent="Next_Room_Pit" index="0" unique_id=105977048]
-texture_filter = 1
+self_modulate = Color(1, 1, 1, 1)
+scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" parent="Next_Room_Pit" index="1" unique_id=1002951456]
 scale = Vector2(3, 3)
@@ -576,10 +577,6 @@ rotation = -1.0873401
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_mt8a2")
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_eqw0d")]
-position = Vector2(16, 61)
-collision_mask = 13
-
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1094862773]
 position = Vector2(1634, -139)
 color = Color(0.9397593, 0.7426324, 0.5284528, 1)
@@ -607,6 +604,10 @@ color = Color(0.9411765, 0.7411765, 0.5294118, 1)
 energy = 4.0
 texture = ExtResource("10_q08db")
 texture_scale = 1.52
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_eqw0d")]
+position = Vector2(16, 61)
+collision_mask = 13
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1001844979]
 navigation_polygon = SubResource("NavigationPolygon_4fppj")
