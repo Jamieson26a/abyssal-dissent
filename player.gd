@@ -30,6 +30,8 @@ func _ready():
 	currentTarget = position;
 	spawnRate = 0;
 	
+	$LeftHand/Clock.animation = str($"..".lvl);
+	
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
 	navigation_agent.path_desired_distance = 80.0
@@ -47,6 +49,7 @@ func set_movement_target(movement_target: Vector2):
 	navigation_agent.set_target_position(movement_target)
 
 func _process(delta):
+	$LeftHand/Clock.animation = str($"..".lvl);
 	var direction;
 	if (not yielding):
 		sanityTick = 5;
@@ -111,6 +114,9 @@ func _process(delta):
 			set_collision_mask_value(3, true);
 			set_collision_layer_value(4, false);
 			set_collision_mask_value(4, false);
+			
+	if (Input.is_action_just_pressed("skip")):
+		get_tree().change_scene_to_file("res://Scenes/Rooms/end.tscn");
 			
 	if (spawnRate != 0):
 		var rand = randi_range(1, spawnRate);
@@ -279,4 +285,4 @@ func _on_next_room_pit_3_body_entered(body: Node2D) -> void:
 
 
 func _on_next_room_pit_4_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://Scenes/Rooms/interlude_4.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Rooms/end.tscn")

@@ -4580,6 +4580,10 @@ position = Vector2(-2592, 4256)
 [node name="CrumbleRocks1324" parent="." unique_id=1992002909 instance=ExtResource("10_yxrds")]
 position = Vector2(-2528, 4256)
 
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_3mshe")]
+position = Vector2(16, 61)
+collision_mask = 13
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=54863692]
 visible = false
 position = Vector2(-1378, 1181)

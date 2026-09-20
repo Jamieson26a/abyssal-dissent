@@ -536,6 +536,13 @@ tile_set = ExtResource("7_q08db")
 
 [node name="Next_Room_Pit" parent="." unique_id=1989462336 instance=ExtResource("9_bejdx")]
 position = Vector2(-339, 1251)
+scale = Vector2(0.25, 0.25)
+
+[node name="Sprite2D" parent="Next_Room_Pit" index="0" unique_id=105977048]
+texture_filter = 1
+
+[node name="CollisionShape2D" parent="Next_Room_Pit" index="1" unique_id=1002951456]
+scale = Vector2(3, 3)
 
 [node name="Spikes" type="Area2D" parent="." unique_id=2140370168]
 position = Vector2(-2, 2)
@@ -569,6 +576,10 @@ rotation = -1.0873401
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_mt8a2")
 
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_eqw0d")]
+position = Vector2(16, 61)
+collision_mask = 13
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1094862773]
 position = Vector2(1634, -139)
 color = Color(0.9397593, 0.7426324, 0.5284528, 1)
@@ -600,14 +611,9 @@ texture_scale = 1.52
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1001844979]
 navigation_polygon = SubResource("NavigationPolygon_4fppj")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=959960776]
-position = Vector2(-335, 1304)
-
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_eqw0d")]
-position = Vector2(16, 61)
-collision_mask = 13
-
 [connection signal="body_entered" from="Next_Room_Pit" to="Player" method="_on_next_room_pit_body_entered"]
 [connection signal="body_entered" from="Spikes" to="Player" method="_on_lava_entered"]
 [connection signal="body_entered" from="Spikes2" to="Player" method="_on_lava_entered"]
 [connection signal="body_entered" from="Spikes3" to="Player" method="_on_lava_entered"]
+
+[editable path="Next_Room_Pit"]

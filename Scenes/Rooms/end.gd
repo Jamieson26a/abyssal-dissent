@@ -7,16 +7,11 @@ var lvl: int;
 func _ready() -> void:
 	# Format: [Position of action, base priority, approval weight]
 	eldritchActions = {
-		"end": [Vector2(-336.933, 1263.292), 1, 1]
+		"end": [Vector2(3201.0, 3725.0), 0, 0]
 	}
 	
 	spawnPositions = [
-		Vector2(1151.0, 755.0),
-		Vector2(1755.0, 657.0)
+		Vector2(-5192.545, -5000)
 	]
 	
-	lvl = 2;
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://Scenes/Finish.tscn");
+	lvl = 12;

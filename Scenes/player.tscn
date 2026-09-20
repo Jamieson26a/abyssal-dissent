@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://b51fx0ubeh17t" path="res://Audio/Music/Ballad of an Unfortunate Soul.mp3" id="18_bi64h"]
 [ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="18_fs7ks"]
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="18_igrcy"]
+[ext_resource type="Texture2D" uid="uid://bpgowdh771737" path="res://Assets/HealthSanityHands/clock.png" id="19_0gysh"]
 [ext_resource type="AudioStream" uid="uid://dgcroigg66y6o" path="res://Audio/Music/High Sanity 1.mp3" id="19_2ijsl"]
 [ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="19_l6n3p"]
 [ext_resource type="AudioStream" uid="uid://cvplm5vouqevq" path="res://Audio/Music/Low Sanity 1.mp3" id="22_p1odr"]
@@ -736,6 +737,93 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1k8q"]
+atlas = ExtResource("19_0gysh")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
+atlas = ExtResource("19_0gysh")
+region = Rect2(576, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57lvd"]
+atlas = ExtResource("19_0gysh")
+region = Rect2(704, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie7r7"]
+atlas = ExtResource("19_0gysh")
+region = Rect2(128, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq3lt"]
+atlas = ExtResource("19_0gysh")
+region = Rect2(256, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pukcj"]
+atlas = ExtResource("19_0gysh")
+region = Rect2(320, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1htnp"]
+atlas = ExtResource("19_0gysh")
+region = Rect2(448, 0, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2gqb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1k8q")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6mvm")
+}],
+"loop": 1,
+"name": &"10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57lvd")
+}],
+"loop": 1,
+"name": &"12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie7r7")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq3lt")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pukcj")
+}],
+"loop": 1,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1htnp")
+}],
+"loop": 1,
+"name": &"8",
+"speed": 5.0
+}]
+
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_girky"]
 stream_count = 1
 stream_0 = ExtResource("18_bi64h")
@@ -859,6 +947,12 @@ position = Vector2(-1130.275, -521.8751)
 scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_vfarp")
 animation = &"0"
+
+[node name="Clock" type="AnimatedSprite2D" parent="LeftHand" unique_id=1291968355]
+position = Vector2(-12.656479, 40.8398)
+scale = Vector2(1.186387, 1.186387)
+sprite_frames = SubResource("SpriteFrames_p2gqb")
+animation = &"12"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=50988425]
 stream = SubResource("AudioStreamInteractive_ai37j")
