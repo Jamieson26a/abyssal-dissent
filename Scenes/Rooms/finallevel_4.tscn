@@ -779,5 +779,7 @@ position = Vector2(16, 61)
 collision_mask = 13
 
 [connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
+[connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]
 [connection signal="body_entered" from="Lava2/LavaArea2D" to="TileMapDual" method="_on_lava_entered"]
+[connection signal="body_entered" from="Spikes" to="Player" method="_on_lava_entered"]
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
