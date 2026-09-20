@@ -7,9 +7,9 @@ var lvl: int;
 func _ready() -> void:
 	# Format: [Position of action, base priority, approval weight]
 	eldritchActions = {
-		"end": [Vector2(151.0, 1048.0), 0, 0],
-		"high": [Vector2(1059.844, -884.45), 0, 10],
-		"low": [Vector2(1483.0, 39.0), 0, -10]
+		"end": [Vector2(5192.502, -5918.848), 0, 0],
+		"high": [Vector2(1059.844, -884.45), -1, 10],
+		"low": [Vector2(1483.0, 39.0), 1, -10]
 	}
 	
 	spawnPositions = [ # ADD MORE
@@ -24,6 +24,7 @@ func _ready() -> void:
 
 
 func _on_area_body_entered(body: Node2D) -> void:
-	eldritchActions.erase("high");
-	eldritchActions.erase("low");
+	eldritchActions = {
+		"end": [Vector2(5192.502, -5918.848), 0, 0]
+	}
 	

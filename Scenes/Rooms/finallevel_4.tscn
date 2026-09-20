@@ -479,12 +479,6 @@ terrain_set_0/terrain_1/name = "FG -spikes.png"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_liax7")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocld5"]
-size = Vector2(127, 319)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_amgph"]
-size = Vector2(141, 319)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dccjw"]
 size = Vector2(512.5073, 1182.122)
 
@@ -547,55 +541,53 @@ tile_set = ExtResource("7_37hw6")
 [node name="Next_Room_Pit_3" parent="." unique_id=1989462336 instance=ExtResource("9_amgph")]
 modulate = Color(0.23529412, 0.23529412, 0.23529412, 1)
 position = Vector2(5227, -6078)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(1.5, 1.5)
 
 [node name="Lava" type="StaticBody2D" parent="." unique_id=1504850931]
-visible = false
 position = Vector2(3489, -3905)
 scale = Vector2(0.88680565, 1)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava" unique_id=2062088809]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava" unique_id=191513939]
 position = Vector2(-4.902482e-05, 4)
 rotation = 0.5235988
 scale = Vector2(9, 1.1)
-shape = SubResource("RectangleShape2D_ocld5")
+polygon = PackedVector2Array(-34.921967, -170.94922, -28.03041, -202.45361, -25.07817, -154.46533, -10.861099, -219.52441, -7.9062347, -169.44922, -0.46957397, -201.42871, 2.7552643, -153.67871, 16.86644, -216.1377, 20.527893, -168.35059, 27.477585, -196.98047, 31.083496, -149.98047, 37.810974, -181.75928, 41.527985, -133.18457, 48.41951, -164.68896, 52.080963, -116.901855, 49.1868, 100.416504, 35.083435, 169.1372, 31.474915, 120.049805, 17.474854, 184.08398, 14.027786, 133.18457, 0.02772522, 197.21777, -3.3611603, 149.19287, -10.522659, 183.02246, -13.861206, 131.61035, -27.752731, 195.13135, -31.469772, 146.55664, -38.469788, 178.57373, -41.80574, 129.24854, -48.644302, 159.45313, -59.361313, 11.679199)
 
 [node name="LavaArea2D" type="Area2D" parent="Lava" unique_id=446043181]
 position = Vector2(-2, 2)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava/LavaArea2D" unique_id=863958000]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava/LavaArea2D" unique_id=649169230]
 position = Vector2(1.5, 1.5)
 rotation = 0.5235988
 scale = Vector2(9, 1.3)
-shape = SubResource("RectangleShape2D_amgph")
+polygon = PackedVector2Array(-26.562195, -189.1665, -23.787003, -157.62402, -10.165405, -209.40527, -6.284317, -168.07178, 0.66534424, -192.29639, 3.7738647, -156.75684, 17.723587, -208.07373, 21.49614, -166.30615, 28.604675, -193.83057, 32.210587, -154.06152, 39.319138, -181.58643, 42.92505, -141.81738, 50.31395, -164.24512, 55.861694, -102.92627, 52.21579, 89.29297, 34.31987, 166.15283, 30.272125, 122.82056, 16.385773, 180.10132, 12.50209, 137.00146, -1.0639496, 189.44873, -4.2306213, 151.47705, -12.805283, 183.97388, -15.712402, 136.9707, -28.566635, 191.01416, -32.614395, 147.68164, -39.667374, 175.87256, -42.72293, 139.23315, -49.720352, 168.09033, -57.97209, 86.49121, -33.784424, -164.74023)
 
 [node name="Lava2" type="StaticBody2D" parent="." unique_id=1231244716]
-visible = false
 position = Vector2(5491, -3727)
 scale = Vector2(0.88680565, 1)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava2" unique_id=1690019223]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava2" unique_id=1277339715]
 position = Vector2(-4.902482e-05, 4)
 rotation = 0.17453292
 scale = Vector2(9, 1.2)
-shape = SubResource("RectangleShape2D_ocld5")
+polygon = PackedVector2Array(-50.30426, -137.4065, 4.689209, -211.82495, 5.86615, -161.76392, 52.70813, -220.32544, 62.157837, 143.73169, 22.322083, 197.25879, 21.457458, 144.2461, -10.253845, 186.18262, -11.507996, 132.83887, -58.95526, 198.12451, -62.57495, 38.750732)
 
 [node name="LavaArea2D" type="Area2D" parent="Lava2" unique_id=157593991]
 position = Vector2(-2, 2)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava2/LavaArea2D" unique_id=308961504]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava2/LavaArea2D" unique_id=1346665231]
 position = Vector2(1.5, 1.5)
 rotation = 0.17453292
 scale = Vector2(9, 1.4)
-shape = SubResource("RectangleShape2D_amgph")
+polygon = PackedVector2Array(-50.64917, -141.68384, 7.8570557, -207.27734, 9.130493, -160.85059, 55.201233, -215.97412, 66.510315, 136.03491, 18.97815, 193.54053, 18.406494, 144.86768, -13.4088745, 181.65674, -13.429077, 134.53491, -62.70038, 188.93481, -67.604675, 24.047363)
 
 [node name="Spikes" type="Area2D" parent="." unique_id=686727671]
 position = Vector2(-2, 2)
@@ -603,7 +595,6 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes" unique_id=1198819646]
-visible = false
 position = Vector2(987.00006, -329.00003)
 rotation = -0.4276056
 scale = Vector2(0.9999995, 0.9999995)
@@ -614,7 +605,6 @@ position = Vector2(16, 61)
 collision_mask = 13
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=385115341]
-visible = false
 position = Vector2(485, -686)
 color = Color(0.9397593, 0.7426324, 0.5284528, 1)
 energy = 4.0
@@ -787,6 +777,10 @@ position = Vector2(-238, -460.00003)
 rotation = -0.40806526
 scale = Vector2(1.2631384, 4.3457737)
 shape = SubResource("RectangleShape2D_4fppj")
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_ocld5")]
+position = Vector2(16, 61)
+collision_mask = 13
 
 [connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
 [connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]

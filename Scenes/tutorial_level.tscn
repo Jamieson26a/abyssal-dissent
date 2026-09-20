@@ -291,6 +291,7 @@ godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=959236371]
+modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
 position = Vector2(32, 32)
 tile_map_data = PackedByteArray("AAAqAA4AAAABAAAAAAAqAA8AAAAAAAIAAAArAA8AAAACAAIAAAArABAAAAAAAAIAAAAsABAAAAABAAIAAAAtABAAAAABAAIAAAAuABAAAAACAAIAAAAuABEAAAABAAAAAAAqABAAAAAAAAMAAABBAAwAAAACAAAAAABCAAwAAAAAAAAAAABDAA0AAAAAAAAAAABCAA0AAAACAAAAAABDAA8AAAACAAAAAABDAA4AAAADAAIAAAA=")
 tile_set = ExtResource("6_foxwi")
@@ -298,7 +299,6 @@ tile_set = ExtResource("6_foxwi")
 [node name="tutorial_Pit" parent="." unique_id=1660357756 instance=ExtResource("5_b8nu6")]
 modulate = Color(0.06469653, 0.06469653, 0.06469653, 1)
 position = Vector2(827, 1317)
-scale = Vector2(3, 3)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1632933494]
 navigation_polygon = SubResource("NavigationPolygon_7woiw")
@@ -377,9 +377,6 @@ position = Vector2(0, -64)
 
 [node name="CrumbleRocks4" parent="Node2D" unique_id=2085031350 instance=ExtResource("8_105ll")]
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("4_0jq2i")]
-position = Vector2(333, 319)
-
 [node name="Lava" type="StaticBody2D" parent="." unique_id=1741986688]
 position = Vector2(3023.0002, 1052)
 scale = Vector2(0.88680565, 1)
@@ -442,6 +439,9 @@ collision_mask = 6
 position = Vector2(1.5, 1.5)
 scale = Vector2(5.1948533, 0.76)
 shape = SubResource("RectangleShape2D_p2gqb")
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("4_0jq2i")]
+position = Vector2(333, 319)
 
 [connection signal="body_entered" from="tutorial_Pit" to="Player" method="_on_tutorial_pit_body_entered"]
 [connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]

@@ -479,12 +479,6 @@ terrain_set_0/terrain_1/name = "FG -spikes.png"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_c1avg")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ocro"]
-size = Vector2(127, 319)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6gyh"]
-size = Vector2(141, 319)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgrly"]
 size = Vector2(317.73856, 913.8518)
 
@@ -535,6 +529,7 @@ godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
 [node name="walls" type="TileMapLayer" parent="." unique_id=946269805]
+modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
 position = Vector2(32, 32)
 tile_map_data = PackedByteArray("AAANABwAAAABAAMAAAANAB0AAAABAAEAAAAOABwAAAADAAAAAAAPABwAAAADAAAAAAAQABwAAAADAAAAAAARABwAAAADAAAAAAASABwAAAADAAAAAAATABwAAAADAAAAAAAUABwAAAADAAAAAAAVABwAAAADAAAAAAAWABwAAAABAAEAAAAYACQAAAADAAEAAAAZACMAAAADAAEAAAAaACIAAAADAAEAAAAbACEAAAADAAEAAAAZACQAAAADAAMAAAAaACMAAAADAAMAAAAbACIAAAADAAMAAAAZACwAAAADAAAAAAAaACwAAAADAAAAAAAdADIAAAABAAIAAAAeADIAAAABAAIAAAAfADIAAAABAAIAAAAaADQAAAABAAIAAAAbADQAAAADAAMAAAAcADMAAAADAAMAAAAgADIAAAADAAMAAAAbADMAAAADAAEAAAAcADIAAAADAAEAAAAgADEAAAADAAEAAAAbACsAAAABAAMAAAAcACoAAAABAAMAAAAdACoAAAADAAAAAAAbACwAAAABAAEAAAAcACsAAAABAAEAAAA=")
 tile_set = ExtResource("7_loxrx")
@@ -549,22 +544,22 @@ scale = Vector2(0.88680565, 1)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava" unique_id=1418146929]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava" unique_id=301221487]
 position = Vector2(-4.902482e-05, 4)
 rotation = 0.6981317
 scale = Vector2(9, 1)
-shape = SubResource("RectangleShape2D_1ocro")
+polygon = PackedVector2Array(-11.112305, -187.60571, -9.960541, -196.30371, -5.8181458, -151.87317, 0.03668213, -196.08813, 4.821869, -144.76318, 10.797211, -191.19373, 15.439575, -141.40088, 21.414948, -187.83142, 26.2247, -137.99731, 32.392, -185.87769, 36.8201, -138.38293, 42.89145, -185.53833, 49.131866, -125.62207, 46.700165, 78.10962, 37.80081, 138.78967, 33.20755, 86.015015, 27.473297, 128.01428, 22.734955, 78.946045, 10.090118, 173.13348, 5.8070984, 121.93207, -1.7507935, 177.70319, -5.2190857, 122.960144, -17.913055, 220.12915, -22.193817, 163.68903, -29.343231, 215.06989, -33.603912, 167.6164, -51.721924, 308.35797, -56.172318, 257.11542, -62.07625, 304.31213, -69.12009, 221.74408)
 
 [node name="LavaArea2D" type="Area2D" parent="Lava" unique_id=265373489]
 position = Vector2(-2, 2)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava/LavaArea2D" unique_id=158152870]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava/LavaArea2D" unique_id=266251326]
 position = Vector2(1.5, 1.5)
 rotation = 0.6981317
 scale = Vector2(9, 1.2)
-shape = SubResource("RectangleShape2D_y6gyh")
+polygon = PackedVector2Array(-10.246155, -153.63025, -6.0322876, -115.96631, -0.08151245, -153.41608, 4.585388, -113.16443, 10.632172, -151.2182, 15.299072, -110.966675, 21.513245, -148.98608, 25.941345, -109.407104, 32.322937, -147.39221, 36.989807, -107.140625, 42.940613, -144.59033, 47.63211, -105.58118, 41.25052, -67.59595, 45.98886, -26.705933, 39.91754, 12.590271, 44.488464, 53.445984, 38.417145, 92.74225, 33.84619, 51.886536, 27.607483, 91.14844, 22.940552, 50.89673, 10.775574, 126.36597, 6.251526, 87.39099, -0.034057617, 124.772156, -4.605011, 83.91644, -16.555725, 161.30078, -21.151215, 121.68756, -27.532776, 159.67273, -32.103714, 118.81702, -50.43599, 234.18652, -55.031494, 194.57324, -61.17424, 233.23108, -65.3858, 191.2016)
 
 [node name="Lava2" type="StaticBody2D" parent="." unique_id=1858609375]
 position = Vector2(1890.0001, 3001)
@@ -572,22 +567,22 @@ scale = Vector2(0.88680565, 1)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava2" unique_id=366396838]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava2" unique_id=1966733798]
 position = Vector2(-4.902482e-05, 4)
 rotation = 1.3962634
 scale = Vector2(6, 1.3)
-shape = SubResource("RectangleShape2D_1ocro")
+polygon = PackedVector2Array(-27.859863, 175.50708, -7.0147705, 192.47119, -4.7945557, 138.78772, 58.49518, 187.65149, 60.35443, 134.55505, 50.04663, 125.28552, 52.10266, 71.46863, 41.598022, 62.9198, 49.75592, -155.04504, 29.042358, -171.02136, 26.52649, -118.45911, 5.845581, -135.28967, 3.42865, -80.885376, -17.678528, -95.42053, -19.53778, -42.323975, -40.546997, -59.42163, -42.373657, -7.1794434)
 
 [node name="LavaArea2D" type="Area2D" parent="Lava2" unique_id=878180390]
 position = Vector2(-2, 2)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava2/LavaArea2D" unique_id=905110631]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava2/LavaArea2D" unique_id=2111953303]
 position = Vector2(1.5, 1.5)
 rotation = 1.3962634
 scale = Vector2(6, 1.5)
-shape = SubResource("RectangleShape2D_y6gyh")
+polygon = PackedVector2Array(-29.201172, 176.77588, -8.191956, 191.59381, 1.8375854, 136.83563, 60.36841, 179.64465, 63.828674, 104.98596, 52.83673, -144.75171, 25.721802, -163.11267, 23.599548, -118.80798, 3.378357, -132.30676, 0.6658325, -86.128296, -19.91632, -99.118286, -22.267029, -49.631348, -44.687225, -63.154297, -46.90454, -5.1762695)
 
 [node name="Spikes" type="Area2D" parent="." unique_id=963087565]
 position = Vector2(-2, 2)
@@ -759,6 +754,10 @@ navigation_polygon = SubResource("NavigationPolygon_amgph")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=14567228]
 position = Vector2(3201, 3725)
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
+position = Vector2(16, 61)
+collision_mask = 13
 
 [connection signal="body_entered" from="Next_Room_Pit_1" to="Player" method="_on_next_room_pit_1_body_entered"]
 [connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]
