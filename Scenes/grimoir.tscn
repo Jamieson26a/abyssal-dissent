@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dmnnbrx7qfgbt"]
+
+[ext_resource type="PackedScene" uid="uid://cqvgcr2p4o5jj" path="res://Scenes/interactable.tscn" id="1_dv1vv"]
+[ext_resource type="Texture2D" uid="uid://k33od3rhpfmf" path="res://Assets/grimoir.png" id="2_pnr7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4pym"]
+size = Vector2(70, 70)
+
+[node name="Grimoir" unique_id=541755134 instance=ExtResource("1_dv1vv")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=886024065]
+shape = SubResource("RectangleShape2D_q4pym")
+
+[node name="Sprite2D" parent="." index="1" unique_id=823353072]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("2_pnr7o")
