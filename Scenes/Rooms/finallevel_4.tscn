@@ -479,12 +479,6 @@ terrain_set_0/terrain_1/name = "FG -spikes.png"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_liax7")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocld5"]
-size = Vector2(127, 319)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_amgph"]
-size = Vector2(141, 319)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dccjw"]
 size = Vector2(512.5073, 1182.122)
 
@@ -494,7 +488,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32
 outlines = Array[PackedVector2Array]([PackedVector2Array(-63, 296, -277, 263, -403, 84, -456, -113, -315, -359, -258, -475, -254, -774, -94, -929, 255, -931, 300, -750, 336, -657, 411, -659, 556, -675, 855, -859, 1050, -952, 1120, -1088, 1247, -1210, 1485, -1237, 1650, -1346, 1673, -1495, 1797, -1681, 1997, -1796, 2162, -1799, 2225, -1935, 2244, -2581, 2318, -2853, 2555, -3222, 2655, -3472, 2875, -3635, 2870, -3813, 3117, -3992, 3122, -4138, 3382, -4151, 3427, -4242, 3460, -4559, 3280, -4776, 3037, -4862, 2915, -5113, 2883, -5353, 3042, -5539, 3171, -5672, 3162, -5840, 3176, -5983, 3275, -6078, 3341, -6037, 3561, -6037, 3767, -6044, 3853, -6091, 3977, -6087, 4043, -6028, 4054, -5908, 4157, -5847, 4284, -5856, 4385, -5865, 4451, -5999, 4492, -6149, 4603, -6278, 4716, -6314, 4848, -6481, 4949, -6500, 4999, -6549, 5430, -6552, 5495, -6486, 5590, -6486, 5636, -6341, 5613, -6192, 5699, -6038, 5679, -5942, 5606, -5841, 5590, -5748, 5504, -5687, 5473, -5612, 5300, -5605, 5248, -5519, 5267, -5345, 5289, -5229, 5362, -5127, 5391, -5012, 5380, -4869, 5423, -4783, 5538, -4645, 5613, -4495, 5686, -4366, 5715, -4253, 5778, -4232, 5811, -4025, 5806, -3871, 5851, -3704, 5847, -3566, 5752, -3503, 5632, -3408, 5573, -3315, 5577, -3052, 5632, -2900, 5604, -2778, 5412, -2604, 5371, -2497, 5378, -2132, 5389, -2012, 5459, -1960, 5470, -1439, 5397, -1362, 5395, -1205, 5318, -1140, 5250, -1020, 5266, -809, 5299, -711, 5324, -659, 5286, -595, 5197, -552, 5150, -505, 5109, -394, 4898, -366, 4821, -439, 4515, -439, 4413, -438, 4327, -373, 4293, -318, 4062, -307, 3951, -239, 3861, -182, 3570, -185, 3493, -237, 2850, -225, 2766, -178, 2712, -112, 2646, -87, 2485, -105, 2442, -31, 1976, -29, 1894, -24, 1840, 30, 1564, 41, 1211, 41, 1012, 31, 942, 90, 824, 97, 772, 151, 679, 163, 620, 219, 504, 251, 282, 285, 74, 298)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fppj"]
-size = Vector2(326, 342.0542)
+size = Vector2(456.53284, 342.0542)
 
 [node name="FINALLEVEL4" type="Node2D" unique_id=1727271518]
 script = ExtResource("1_amgph")
@@ -552,52 +546,50 @@ position = Vector2(5227, -6078)
 scale = Vector2(5, 5)
 
 [node name="Lava" type="StaticBody2D" parent="." unique_id=1504850931]
-visible = false
 position = Vector2(3489, -3905)
 scale = Vector2(0.88680565, 1)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava" unique_id=2062088809]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava" unique_id=1815109701]
 position = Vector2(-4.902482e-05, 4)
 rotation = 0.5235988
 scale = Vector2(9, 1.1)
-shape = SubResource("RectangleShape2D_ocld5")
+polygon = PackedVector2Array(-28.631134, -202.76514, -24.914124, -154.19043, -11.297714, -219.56152, -7.5781097, -168.89941, -0.46957397, -201.42871, 2.8637543, -154.19092, 16.810883, -216.9248, 20.58345, -167.56299, 27.419449, -199.85449, 30.863892, -151.04248, 37.538406, -181.52148, 41.639084, -131.61035, 51.83879, -179.7915, 43.911606, 158.92676, 42.078262, 132.9458, 35.35338, 166.8125, 31.308243, 117.68799, 17.419296, 183.29639, 13.919296, 133.69678, 0.13883972, 198.79248, -3.1970825, 149.46777, -10.525253, 180.93506, -13.972305, 130.03564, -28.078262, 196.66895, -31.52533, 145.76953, -38.361298, 178.06104, -41.969788, 128.97412, -52.278015, 177.66797, -59.305756, 12.466797, -34.813446, -171.46191)
 
 [node name="LavaArea2D" type="Area2D" parent="Lava" unique_id=446043181]
 position = Vector2(-2, 2)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava/LavaArea2D" unique_id=863958000]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava/LavaArea2D" unique_id=1768939147]
 position = Vector2(1.5, 1.5)
 rotation = 0.5235988
 scale = Vector2(9, 1.3)
-shape = SubResource("RectangleShape2D_amgph")
+polygon = PackedVector2Array(-27.821747, -192.12646, -24.15767, -149.9253, -10.755707, -202.60498, -6.985733, -162.60303, 0.45092773, -189.66357, 4.2286987, -144.36377, 17.138504, -197.74072, 21.234009, -159.04053, 28.077774, -181.06592, 31.46666, -140.4292, 37.974503, -168.21777, 42.567398, -125.288086, 54.778397, -171.43115, 45.12982, 169.1333, 41.801697, 132.69507, 34.044724, 164.58813, 30.322495, 119.95459, 16.489075, 176.13574, 12.496872, 133.46924, -0.6298981, 187.71387, -4.2384186, 146.17871, -12.056152, 173.87354, -15.447632, 131.47095, -29.715088, 189.38672, -33.44252, 141.22119, -41.143936, 173.78027, -44.535446, 131.37793, -54.35144, 173.27783, -61.73857, 11.834473, -36.93637, -155.69482)
 
 [node name="Lava2" type="StaticBody2D" parent="." unique_id=1231244716]
-visible = false
 position = Vector2(5491, -3727)
 scale = Vector2(0.88680565, 1)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava2" unique_id=1690019223]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava2" unique_id=738568759]
 position = Vector2(-4.902482e-05, 4)
 rotation = 0.17453292
 scale = Vector2(9, 1.2)
-shape = SubResource("RectangleShape2D_ocld5")
+polygon = PackedVector2Array(-49.95337, -138.7168, 4.812561, -211.98804, 5.924011, -159.302, 53.182434, -221.79907, 61.949646, 145.69946, 22.730896, 198.41064, 21.418884, 142.60474, -10.253845, 186.18262, -11.346008, 134.31714, -59.09796, 197.4668, -62.613525, 37.10913)
 
 [node name="LavaArea2D" type="Area2D" parent="Lava2" unique_id=157593991]
 position = Vector2(-2, 2)
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava2/LavaArea2D" unique_id=308961504]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lava2/LavaArea2D" unique_id=1153576853]
 position = Vector2(1.5, 1.5)
 rotation = 0.17453292
 scale = Vector2(9, 1.4)
-shape = SubResource("RectangleShape2D_amgph")
+polygon = PackedVector2Array(-50.980774, -139.85742, 8.130737, -211.21387, 9.890137, -160.98633, 45.330017, -204.78491, 56.824585, -217.08911, 67.0155, 140.5393, 55.06598, 154.80981, 20.439514, 191.15869, 18.927002, 140.65137, -12.822876, 175.18994, -14.246582, 132.5603, -50.57715, 180.99512, -62.68866, 193.99854, -67.030396, 12.516602)
 
 [node name="Spikes" type="Area2D" parent="." unique_id=686727671]
 position = Vector2(-2, 2)
@@ -605,14 +597,12 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes" unique_id=1198819646]
-visible = false
 position = Vector2(987.00006, -329.00003)
 rotation = -0.4276056
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_dccjw")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=385115341]
-visible = false
 position = Vector2(485, -686)
 color = Color(0.9397593, 0.7426324, 0.5284528, 1)
 energy = 4.0
@@ -781,13 +771,15 @@ navigation_polygon = SubResource("NavigationPolygon_4fppj")
 position = Vector2(1483, 39)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area" unique_id=193170963]
-position = Vector2(-238, -460.00003)
+position = Vector2(-313.6714, -427.28482)
 rotation = -0.40806526
 scale = Vector2(1.2631384, 4.3457737)
 shape = SubResource("RectangleShape2D_4fppj")
 
-[connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
-[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
+[node name="Node2D" type="Node2D" parent="." unique_id=505430886]
+position = Vector2(5192.502, -5918.8477)
+
 [connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
 [connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]
 [connection signal="body_entered" from="Lava2/LavaArea2D" to="TileMapDual" method="_on_lava_entered"]
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

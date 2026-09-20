@@ -534,10 +534,6 @@ position = Vector2(32, 32)
 tile_map_data = PackedByteArray("AAD4/0IAAAACAAAAAAD5/0IAAAADAAAAAAD7/0MAAAADAAAAAAD9/0QAAAADAAAAAAD6/0IAAAAAAAAAAAD8/0MAAAAAAAAAAAD6/0MAAAACAAAAAAD8/0QAAAACAAAAAADu/0sAAAACAAIAAADw/0wAAAACAAIAAADy/00AAAACAAIAAAD0/04AAAACAAIAAAD1/08AAAACAAIAAADv/0wAAAABAAIAAADx/00AAAABAAIAAADz/04AAAABAAIAAAD2/1AAAAABAAIAAAD3/1AAAAABAAIAAADu/0wAAAAAAAIAAADw/00AAAAAAAIAAADy/04AAAAAAAIAAAD0/08AAAAAAAIAAAD1/1AAAAAAAAIAAAD4/1AAAAADAAMAAAD4/08AAAADAAEAAAA=")
 tile_set = ExtResource("7_kui8d")
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_3mshe")]
-position = Vector2(16, 61)
-collision_mask = 13
-
 [node name="Next_Room_Pit_2" parent="." unique_id=1989462336 instance=ExtResource("8_0fquv")]
 position = Vector2(1728, 5364)
 scale = Vector2(3, 3)
@@ -4618,6 +4614,10 @@ navigation_polygon = SubResource("NavigationPolygon_j3pel")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=213927694]
 position = Vector2(-3286, 2584)
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_3mshe")]
+position = Vector2(16, 61)
+collision_mask = 13
 
 [connection signal="body_entered" from="Next_Room_Pit_2" to="Player" method="_on_next_room_pit_2_body_entered"]
 [connection signal="body_entered" from="Spikes" to="Player" method="_on_lava_entered"]
