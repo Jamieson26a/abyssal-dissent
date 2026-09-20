@@ -1,13 +1,17 @@
 extends Node2D
 
 var eldritchActions: Dictionary;
+var spawnPositions: Array;
 
 func _ready() -> void:
 	# Format: [Position of action, base priority, approval weight]
 	eldritchActions = {
-		"end": [Vector2(151.0, 1048.0), 1, 1],
-		"thingy": [Vector2(1000, 1100), 0, -5]
+		"end": [Vector2(1500, 1250), 1, 0]
 	}
+	spawnPositions = [
+		Vector2(-10000, -10000)
+	]
+	
 
 
 func _on_interactable_body_entered(body: Node2D) -> void:
@@ -33,3 +37,15 @@ func _on_interactable_4_body_entered(body: Node2D) -> void:
 
 func _on_interactable_4_body_exited(body: Node2D) -> void:
 	$Interactable4/Label.visible = false;
+
+func _on_interactable_5_body_entered(body: Node2D) -> void:
+	$Interactable5/Label.visible = true;
+
+func _on_interactable_5_body_exited(body: Node2D) -> void:
+	$Interactable5/Label.visible = false;
+
+func _on_interactable_6_body_entered(body: Node2D) -> void:
+	$Interactable6/Label.visible = true;
+
+func _on_interactable_6_body_exited(body: Node2D) -> void:
+	$Interactable6/Label.visible = false;
