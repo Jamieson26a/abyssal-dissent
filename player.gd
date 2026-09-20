@@ -160,8 +160,7 @@ func sanityUpdate():
 	elif (player_vars.approval > 4):
 		approvalStr = "y"
 	$RightHand/Eye.animation = str(level) + approvalStr;
-	if player_vars.sanity < 600:
-		spawnRate = player_vars.sanity;
+	spawnRate = int(player_vars.sanity*2/3) + 10;
 	if player_vars.sanity < 200:
 		set_collision_layer_value(8, true);
 		set_collision_mask_value(8, true);
@@ -286,3 +285,9 @@ func _on_next_room_pit_3_body_entered(body: Node2D) -> void:
 
 func _on_next_room_pit_4_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Rooms/end.tscn")
+
+
+func _on_blood_pact_body_entered(body: Node2D) -> void:
+	if (body == self):
+		player_vars.changeHealth(-3);
+		player_vars.changeApproval(5);

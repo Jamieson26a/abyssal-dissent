@@ -42,7 +42,8 @@ offset_bottom = 1031.0
 grow_vertical = 0
 scale = Vector2(7.5, 7.5)
 theme = ExtResource("1_iy0q0")
-text = "To cower and live..."
+text = "To cower and live...
+(+sanity -approval)"
 script = ExtResource("3_rxk8y")
 
 [node name="Button2" type="Button" parent="." unique_id=328891056]
@@ -57,7 +58,8 @@ offset_bottom = 1031.0
 grow_vertical = 0
 scale = Vector2(7.5, 7.5)
 theme = ExtResource("1_iy0q0")
-text = "To thrive and perish..."
+text = "To thrive and perish...
+(-sanity +approval)"
 icon_alignment = 1
 script = ExtResource("4_m70ka")
 

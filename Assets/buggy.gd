@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var movement_speed: float = 200.0
+var movement_speed: float = 300.0
 var movement_target_position: Vector2;
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
@@ -40,5 +40,5 @@ func _physics_process(delta):
 
 
 func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
-	if body.name.contains("Lava") or body.name.contains("Player"):
+	if body.name.to_lower().contains("lava") or body.name.to_lower().contains("player"):
 		self.queue_free();

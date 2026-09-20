@@ -7,7 +7,7 @@ var lvl: int;
 func _ready() -> void:
 	# Format: [Position of action, base priority, approval weight]
 	eldritchActions = {
-		"low": [Vector2(-3286.0, 2584.0), 1, -5],
+		"low": [Vector2(-4321.0, 2850.0), 1, -5],
 		"neutral": [Vector2(37.0, 2631.0), 24, 0],
 		"high": [Vector2(-1458.0, 4135.0), 1, 5]
 	}
