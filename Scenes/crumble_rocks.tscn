@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://di7rk7svt5kgr"]
+
+[ext_resource type="Texture2D" uid="uid://hayaif5xq6vu" path="res://Assets/crumble.png" id="1_cjtnx"]
+[ext_resource type="Script" uid="uid://ch4awnh5cpo5t" path="res://Scenes/crumble_rocks.gd" id="1_vx2c3"]
+[ext_resource type="Texture2D" uid="uid://cjvfi6dee6u4k" path="res://Assets/void.png" id="2_vx2c3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fppj"]
+size = Vector2(64, 63.75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fppj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cjtnx")
+}],
+"loop": 1,
+"name": &"rocks",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vx2c3")
+}],
+"loop": 1,
+"name": &"void",
+"speed": 5.0
+}]
+
+[node name="CrumbleRocks" type="StaticBody2D" unique_id=1432872438]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_vx2c3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466559092]
+shape = SubResource("RectangleShape2D_4fppj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=459866972]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4fppj")
+animation = &"rocks"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=827349965]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=749636164]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_4fppj")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

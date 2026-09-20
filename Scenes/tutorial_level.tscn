@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="4_0jq2i"]
 [ext_resource type="PackedScene" uid="uid://b4kho1p04ydj7" path="res://Scenes/tutorial_pit.tscn" id="5_b8nu6"]
 [ext_resource type="PackedScene" uid="uid://cqvgcr2p4o5jj" path="res://Scenes/interactable.tscn" id="7_3jdy6"]
+[ext_resource type="PackedScene" uid="uid://di7rk7svt5kgr" path="res://Scenes/crumble_rocks.tscn" id="8_105ll"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_105ll"]
 texture = ExtResource("3_3jdy6")
@@ -158,9 +159,6 @@ script = ExtResource("2_k8hhx")
 godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("4_0jq2i")]
-position = Vector2(333, 319)
-
 [node name="tutorial_Pit" parent="." unique_id=1660357756 instance=ExtResource("5_b8nu6")]
 position = Vector2(827, 1317)
 scale = Vector2(3, 3)
@@ -195,6 +193,23 @@ position = Vector2(2844, 608)
 text = "Sometimes, you may need some help of the...
 direct kind.
 give me control, and yield control..."
+
+[node name="Node2D" type="Node2D" parent="." unique_id=152608932]
+position = Vector2(673, 417)
+
+[node name="CrumbleRocks" parent="Node2D" unique_id=1432872438 instance=ExtResource("8_105ll")]
+position = Vector2(0, -192)
+
+[node name="CrumbleRocks2" parent="Node2D" unique_id=766179875 instance=ExtResource("8_105ll")]
+position = Vector2(0, -128)
+
+[node name="CrumbleRocks3" parent="Node2D" unique_id=1256060258 instance=ExtResource("8_105ll")]
+position = Vector2(0, -64)
+
+[node name="CrumbleRocks4" parent="Node2D" unique_id=2085031350 instance=ExtResource("8_105ll")]
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("4_0jq2i")]
+position = Vector2(333, 319)
 
 [connection signal="body_entered" from="tutorial_Pit" to="Player" method="_on_tutorial_pit_body_entered"]
 [connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]
