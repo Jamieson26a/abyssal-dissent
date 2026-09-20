@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://bdpv6r2cilj62"]
+[gd_scene format=3 uid="uid://dyrb2g4mxbv0x"]
 
-[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="1_iy0q0"]
-[ext_resource type="Script" uid="uid://dcyo04k1vcgfw" path="res://interlude.gd" id="1_r8fvn"]
-[ext_resource type="AudioStream" uid="uid://ba3nv8fb1kc4v" path="res://Audio/Music/Title theme.mp3" id="2_r8fvn"]
+[ext_resource type="Script" uid="uid://c6cuilpifd6wl" path="res://Scenes/Rooms/interlude_2.gd" id="1_f86ke"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="2_2pfvc"]
+[ext_resource type="AudioStream" uid="uid://ba3nv8fb1kc4v" path="res://Audio/Music/Title theme.mp3" id="3_si8rg"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r8fvn"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ynf1"]
 load_path = "res://.godot/imported/cloud1.png-75827d25af1c4e926bc59cd3aa5458f6.ctex"
 
-[node name="Interlude1" type="Node2D" unique_id=1697565247]
-script = ExtResource("1_r8fvn")
+[node name="Interlude2" type="Node2D" unique_id=1158648974]
+script = ExtResource("1_f86ke")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1521029964]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=294279960]
 position = Vector2(1282, 834)
 amount = 5
-texture = SubResource("CompressedTexture2D_r8fvn")
+texture = SubResource("CompressedTexture2D_8ynf1")
 lifetime = 60.0
 speed_scale = 0.5
 randomness = 0.2
@@ -28,7 +28,7 @@ scale_amount_min = 40.0
 scale_amount_max = 40.0
 color = Color(0.8804961, 0.8804957, 0.88049585, 0.33333334)
 
-[node name="Button" type="Button" parent="." unique_id=1257254664]
+[node name="Button" type="Button" parent="." unique_id=300127907]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -38,10 +38,10 @@ offset_right = 256.0
 offset_bottom = 1031.0
 grow_vertical = 0
 scale = Vector2(7.5, 7.5)
-theme = ExtResource("1_iy0q0")
-text = "To cower and live..."
+theme = ExtResource("2_2pfvc")
+text = "Accept death, and make peace..."
 
-[node name="Button2" type="Button" parent="." unique_id=328891056]
+[node name="Button2" type="Button" parent="." unique_id=1401247961]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -51,14 +51,14 @@ offset_right = 1456.0
 offset_bottom = 1031.0
 grow_vertical = 0
 scale = Vector2(7.5, 7.5)
-theme = ExtResource("1_iy0q0")
-text = "To thrive and perish..."
+theme = ExtResource("2_2pfvc")
+text = "Fight back against fate..."
 icon_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=311594418]
-stream = ExtResource("2_r8fvn")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=843609320]
+stream = ExtResource("3_si8rg")
 
-[node name="Label" type="Label" parent="." unique_id=252287064]
+[node name="Label" type="Label" parent="." unique_id=2117734293]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -71,7 +71,7 @@ offset_bottom = 363.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(10, 10)
-theme = ExtResource("1_iy0q0")
+theme = ExtResource("2_2pfvc")
 text = "Make your choice"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

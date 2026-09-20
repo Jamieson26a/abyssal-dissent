@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bo601vvwnk8pc" path="res://Assets/Tilesets/stone-water.png" id="5_dccjw"]
 [ext_resource type="Texture2D" uid="uid://giolpn4g3dpi" path="res://Assets/Tilesets/spikes.png" id="6_ddfiy"]
 [ext_resource type="TileSet" uid="uid://dgd1ta8x18s8" path="res://Assets/Tilesets/walls.tres" id="7_37hw6"]
+[ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="8_ocld5"]
+[ext_resource type="PackedScene" uid="uid://c8sm2xyiki83d" path="res://Scenes/next_room_pit_1.tscn" id="9_amgph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5txyd"]
 texture = ExtResource("2_h5hfy")
@@ -515,3 +517,13 @@ metadata/_custom_type_script = "uid://cjk8nronimk5r"
 [node name="walls" type="TileMapLayer" parent="." unique_id=609564352]
 position = Vector2(32, 32)
 tile_set = ExtResource("7_37hw6")
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("8_ocld5")]
+position = Vector2(16, 61)
+collision_mask = 13
+
+[node name="Next_Room_Pit_3" parent="." unique_id=1989462336 instance=ExtResource("9_amgph")]
+position = Vector2(5227, -6078)
+scale = Vector2(5, 5)
+
+[connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
