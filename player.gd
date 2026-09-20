@@ -10,6 +10,7 @@ var spawnRate: int; # 1 / mobs per frame, avg
 
 @onready var player_music_player := $AudioStreamPlayer as AudioStreamPlayer
 @onready var walk_music_player := $AudioStreamPlayer2D as AudioStreamPlayer2D
+@onready var crunchy_bones := $AudioStreamPlayer2D2 as AudioStreamPlayer2D
 
 var yielding: bool;
 
@@ -179,6 +180,7 @@ func _on_tutorial_pit_body_entered(body: Node2D) -> void:
 	resetafterexitorenter()
 
 func hurt():
+	crunchy_bones["playing"] = true
 	player_vars.health -= 1
 	updateHealthLabel();
 

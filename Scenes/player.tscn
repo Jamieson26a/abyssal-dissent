@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://pq6u5d6tqvir" path="res://Audio/Music/Mid Sanity 1.mp3" id="19_l6n3p"]
 [ext_resource type="AudioStream" uid="uid://cvplm5vouqevq" path="res://Audio/Music/Low Sanity 1.mp3" id="22_p1odr"]
 [ext_resource type="AudioStream" uid="uid://c0ipj3q8c2031" path="res://Audio/Music/Low Sanity 2.mp3" id="23_0gysh"]
+[ext_resource type="AudioStream" uid="uid://4em565q2ru8j" path="res://Assets/universfield-bone-crack-3-121580.mp3" id="27_vfarp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2gqb"]
 radius = 24.242432
@@ -981,5 +982,8 @@ stream = SubResource("AudioStreamMP3_p1odr")
 volume_db = 4.0
 autoplay = true
 bus = &"sfx"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=536046034]
+stream = ExtResource("27_vfarp")
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
