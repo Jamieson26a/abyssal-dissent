@@ -31,7 +31,7 @@ func _ready():
 	currentTarget = position;
 	spawnRate = 0;
 	
-	$LeftHand/Clock.animation = str($"..".lvl);
+	$Hands/LeftHand/Clock.animation = str($"..".lvl);
 	
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
@@ -50,7 +50,7 @@ func set_movement_target(movement_target: Vector2):
 	navigation_agent.set_target_position(movement_target)
 
 func _process(delta):
-	$LeftHand/Clock.animation = str($"..".lvl);
+	$Hands/LeftHand/Clock.animation = str($"..".lvl);
 	var direction;
 	if (not yielding):
 		sanityTick = 5;
@@ -163,7 +163,7 @@ func sanityUpdate():
 		approvalStr = "n"
 	elif (player_vars.approval > 4):
 		approvalStr = "y"
-	$RightHand/Eye.animation = str(level) + approvalStr;
+	$Hands/RightHand/Eye.animation = str(level) + approvalStr;
 	spawnRate = int(player_vars.sanity*2/3) + 10;
 	if player_vars.sanity < 200:
 		set_collision_layer_value(8, true);
@@ -184,16 +184,17 @@ func _on_tutorial_pit_body_entered(body: Node2D) -> void:
 
 func hurt():
 	crunchy_bones["playing"] = true
+	$Hands.startShake();
 	player_vars.health -= 1
 	updateHealthLabel();
 
 func updateHealthLabel():
 	if (player_vars.health >= 5):
-		$RightHand.animation = "0";
-		$LeftHand.animation = str(10-player_vars.health);
+		$Hands/RightHand.animation = "0";
+		$Hands/LeftHand.animation = str(10-player_vars.health);
 	elif (player_vars.health >= 0):
-		$RightHand.animation = str(5-player_vars.health);
-		$LeftHand.animation = "5";
+		$Hands/RightHand.animation = str(5-player_vars.health);
+		$Hands/LeftHand.animation = "5";
 	elif (player_vars.health <= 0):
 		death()
 

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd6tn7kqjs0ql" path="res://Assets/floating.png" id="4_0gysh"]
 [ext_resource type="Texture2D" uid="uid://d0ckwif27b8o6" path="res://Assets/HealthSanityHands/right-hands/1.png" id="4_h4iuc"]
 [ext_resource type="Texture2D" uid="uid://dvt0q7gpx4j4o" path="res://Assets/HealthSanityHands/right-hands/2.png" id="5_fd4e3"]
+[ext_resource type="Script" uid="uid://de1unxxatk2bq" path="res://Scenes/hands.gd" id="5_y6uwr"]
 [ext_resource type="Texture2D" uid="uid://d01a5qitkq8x5" path="res://Assets/HealthSanityHands/right-hands/3.png" id="6_qqcod"]
 [ext_resource type="Texture2D" uid="uid://b8fqfx4ce3bgk" path="res://Assets/HealthSanityHands/right-hands/4.png" id="7_igrcy"]
 [ext_resource type="Texture2D" uid="uid://djv4vn7xi7a6r" path="res://Assets/HealthSanityHands/right-hands/5.png" id="8_fs7ks"]
@@ -972,25 +973,28 @@ frame_progress = 0.6238502
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293886085]
 position = Vector2(-0.2750244, -0.8751221)
 
-[node name="RightHand" type="AnimatedSprite2D" parent="." unique_id=699692483]
+[node name="Hands" type="Node2D" parent="." unique_id=1631822216]
+script = ExtResource("5_y6uwr")
+
+[node name="RightHand" type="AnimatedSprite2D" parent="Hands" unique_id=699692483]
 position = Vector2(1128.725, -520.75024)
 scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_0gysh")
 animation = &"0"
 
-[node name="Eye" type="AnimatedSprite2D" parent="RightHand" unique_id=705529754]
+[node name="Eye" type="AnimatedSprite2D" parent="Hands/RightHand" unique_id=705529754]
 texture_filter = 1
 position = Vector2(12.213749, 50.000107)
 sprite_frames = SubResource("SpriteFrames_igrcy")
 animation = &"1"
 
-[node name="LeftHand" type="AnimatedSprite2D" parent="." unique_id=894017039]
+[node name="LeftHand" type="AnimatedSprite2D" parent="Hands" unique_id=894017039]
 position = Vector2(-1130.275, -521.8751)
 scale = Vector2(1.637499, 1.637499)
 sprite_frames = SubResource("SpriteFrames_vfarp")
 animation = &"0"
 
-[node name="Clock" type="AnimatedSprite2D" parent="LeftHand" unique_id=1291968355]
+[node name="Clock" type="AnimatedSprite2D" parent="Hands/LeftHand" unique_id=1291968355]
 position = Vector2(-12.656479, 40.8398)
 scale = Vector2(1.186387, 1.186387)
 sprite_frames = SubResource("SpriteFrames_p2gqb")
