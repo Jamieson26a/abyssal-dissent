@@ -68,17 +68,19 @@ func _process(delta):
 			walk_music_player["stream_paused"] = false
 		else:
 			walk_music_player["stream_paused"] = true
+			
+		if (direction.length() > 0):
+			if (abs(direction.x) < 1 and abs(direction.y) < 1):
+				$Sprite2D.play("walkingDiagonal")
+			else:
+				$Sprite2D.play("walking")
+		else:
+			$Sprite2D.animation = "default"
 	else:
 		direction = Vector2(0,0)
 		sanityTick = 20;
 		
-	if (direction.length() > 0):
-		if (abs(direction.x) < 1 and abs(direction.y) < 1):
-			$Sprite2D.play("walkingDiagonal")
-		else:
-			$Sprite2D.play("walking")
-	else:
-		$Sprite2D.animation = "default"
+		
 		
 	timeSinceLastSanityTick += delta;
 	if (timeSinceLastSanityTick >= 1):
@@ -136,6 +138,7 @@ func _physics_process(delta):
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 	
 	if (yielding):
+		$Sprite2D.play("floating");
 		var direction = current_agent_position.direction_to(next_path_position)
 		velocity = direction * movement_speed
 		move_and_slide();
