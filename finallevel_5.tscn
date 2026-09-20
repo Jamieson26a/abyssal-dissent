@@ -1,12 +1,15 @@
 [gd_scene format=4 uid="uid://d0hsw54o16kog"]
 
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="1_n0o27"]
+[ext_resource type="Script" uid="uid://dixj28fes4fpe" path="res://finallevel_5.gd" id="1_yx3mc"]
 [ext_resource type="Texture2D" uid="uid://8wd20higjblm" path="res://Assets/Tilesets/stone-wall.png" id="2_xs6fx"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="3_rgabp"]
 [ext_resource type="Texture2D" uid="uid://7ko78ny0k3do" path="res://Assets/Tilesets/rock-lava.png" id="4_yx3mc"]
 [ext_resource type="Texture2D" uid="uid://bo601vvwnk8pc" path="res://Assets/Tilesets/stone-water.png" id="5_emld8"]
 [ext_resource type="Texture2D" uid="uid://giolpn4g3dpi" path="res://Assets/Tilesets/spikes.png" id="6_qb1yr"]
 [ext_resource type="TileSet" uid="uid://dgd1ta8x18s8" path="res://Assets/Tilesets/walls.tres" id="7_6xj5p"]
+[ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="9_emld8"]
+[ext_resource type="PackedScene" uid="uid://c8sm2xyiki83d" path="res://Scenes/next_room_pit_1.tscn" id="10_qb1yr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qy0w1"]
 texture = ExtResource("2_xs6fx")
@@ -476,6 +479,7 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_xrlb0")
 
 [node name="FINALLEVEL5" type="Node2D" unique_id=710441957]
+script = ExtResource("1_yx3mc")
 
 [node name="TileMapDual" type="TileMapLayer" parent="." unique_id=1721038185]
 material = ExtResource("1_n0o27")
@@ -512,3 +516,13 @@ metadata/_custom_type_script = "uid://cjk8nronimk5r"
 [node name="walls" type="TileMapLayer" parent="." unique_id=1838141918]
 position = Vector2(32, 32)
 tile_set = ExtResource("7_6xj5p")
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_emld8")]
+position = Vector2(5, -117)
+collision_mask = 13
+
+[node name="Next_Room_Pit_4" parent="." unique_id=1989462336 instance=ExtResource("10_qb1yr")]
+position = Vector2(5227, -6078)
+scale = Vector2(5, 5)
+
+[connection signal="body_entered" from="Next_Room_Pit_4" to="Player" method="_on_next_room_pit_4_body_entered"]

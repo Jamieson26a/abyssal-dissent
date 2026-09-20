@@ -238,10 +238,6 @@ func entityPrioritize() -> Array:
 	else:
 		return [];
 
-func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://interlude.tscn")
-	print("nextroom")
-
 func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
 	if (body == self):
 		hurt()
@@ -264,3 +260,23 @@ func spawnMob():
 func _on_water_body_entered(body: Node2D) -> void:
 	if (body == self):
 		hurt();
+
+
+func _on_next_room_pit_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://interlude.tscn")
+
+
+func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Scenes/Rooms/interlude_2.tscn")
+
+
+func _on_next_room_pit_2_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Scenes/Rooms/interlude_3.tscn")
+
+
+func _on_next_room_pit_3_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Scenes/Rooms/interlude_4.tscn")
+
+
+func _on_next_room_pit_4_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Scenes/Rooms/interlude_4.tscn")
