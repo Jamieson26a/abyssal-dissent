@@ -29,6 +29,7 @@ scale_amount_max = 40.0
 color = Color(0.8804961, 0.8804957, 0.88049585, 0.33333334)
 
 [node name="Button" type="Button" parent="." unique_id=300127907]
+texture_filter = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -42,6 +43,7 @@ theme = ExtResource("2_2pfvc")
 text = "Accept death, and make peace..."
 
 [node name="Button2" type="Button" parent="." unique_id=1401247961]
+texture_filter = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -59,6 +61,7 @@ icon_alignment = 1
 stream = ExtResource("3_si8rg")
 
 [node name="Label" type="Label" parent="." unique_id=2117734293]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
