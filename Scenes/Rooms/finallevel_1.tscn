@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b62ffto6byo12"]
 
+[ext_resource type="Script" uid="uid://ul70af8oeebq" path="res://Scenes/Rooms/finallevel_1.gd" id="1_q08db"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="1_rwghd"]
 [ext_resource type="Texture2D" uid="uid://8wd20higjblm" path="res://Assets/Tilesets/stone-wall.png" id="2_dd1to"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="3_d76ua"]
@@ -486,6 +487,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-255, -72, -263, 183, -139, 316, 318, 318, 491, 132, 654, 65, 899, 53, 968, -18, 1304, 24, 1370, 76, 1554, 155, 1694, 266, 1766, 271, 1778, 372, 1846, 413, 1846, 542, 1835, 615, 1660, 619, 1743, 704, 1827, 728, 1905, 810, 1917, 963, 1975, 1002, 1974, 1200, 1672, 1205, 1587, 1200, 1528, 1129, 1436, 1200, 1345, 1282, 1185, 1272, 1089, 1166, 1089, 1084, 1035, 1058, 1058, 921, 1218, 766, 1211, 699, 1135, 694, 1025, 818, 999, 883, 989, 1061, 939, 1069, 937, 1180, 895, 1210, 877, 1249, 879, 1342, 547, 1332, 531, 1254, 444, 1252, 442, 1345, 348, 1427, 195, 1745, 153, 1793, -138, 1810, -242, 1736, -306, 1656, -306, 1478, -294, 1431, -219, 1424, -174, 1421, -164, 1303, -100, 1293, -112, 1138, -175, 1127, -188, 1076, -453, 1073, -464, 1133, -593, 1133, -588, 1269, -651, 1271, -651, 1596, -582, 1604, -582, 1663, -525, 1672, -522, 1785, -458, 1798, -458, 1924, -275, 2104, -247, 2136, 122, 2126, 199, 2046, 271, 2059, 271, 1901, 401, 1800, 449, 1800, 449, 1738, 692, 1738, 749, 1675, 1784, 1672, 1846, 1589, 1985, 1595, 2230, 1470, 2330, 1380, 2389, 1327, 2384, 721, 2394, 641, 2454, 641, 2446, 509, 2399, 501, 2374, 243, 2304, 210, 2314, 107, 2270, 126, 2118, -63, 2021, -71, 1920, -204, 1741, -223, 1695, -287, 833, -273, 758, -192, 709, -140, 495, -144, 495, -86, 395, -78, 306, -84, 327, -156, 239, -148, 186, -171, 188, -211, -67, -218, -82, -164, -189, -149)])
 
 [node name="FINALLEVEL1" type="Node2D" unique_id=1380351461]
+script = ExtResource("1_q08db")
 
 [node name="TileMapDual" type="TileMapLayer" parent="." unique_id=1353704132]
 modulate = Color(0.23874447, 0.23874435, 0.23874435, 1)
@@ -600,6 +602,9 @@ texture_scale = 1.52
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1001844979]
 navigation_polygon = SubResource("NavigationPolygon_4fppj")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=959960776]
+position = Vector2(-335, 1304)
 
 [connection signal="body_entered" from="Next_Room_Pit" to="Player" method="_on_next_room_pit_body_entered"]
 [connection signal="body_entered" from="Spikes" to="Player" method="_on_lava_entered"]

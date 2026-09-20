@@ -154,8 +154,8 @@ func sanityUpdate():
 	elif (player_vars.approval > 4):
 		approvalStr = "y"
 	$RightHand/Eye.animation = str(level) + approvalStr;
-	if player_vars.sanity < 500:
-		spawnRate = player_vars.sanity * 5;
+	if player_vars.sanity < 600:
+		spawnRate = player_vars.sanity;
 	if player_vars.sanity < 200:
 		set_collision_layer_value(8, true);
 		set_collision_mask_value(8, true);
