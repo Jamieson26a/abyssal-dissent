@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://djgmfv06mb4vy"]
+
+[ext_resource type="Script" uid="uid://dluuex6scf8r7" path="res://Scenes/death_screen.gd" id="1_3okuf"]
+[ext_resource type="AudioStream" uid="uid://b51fx0ubeh17t" path="res://Audio/Music/Ballad of an Unfortunate Soul.mp3" id="2_6pwwv"]
+[ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="3_xyssb"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_7woiw"]
+stream_count = 1
+stream_0 = ExtResource("2_6pwwv")
+
+[node name="Node2D" type="Node2D" unique_id=1884366260]
+script = ExtResource("1_3okuf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2139623707]
+stream = SubResource("AudioStreamPlaylist_7woiw")
+autoplay = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1526943021]
+custom_minimum_size = Vector2(2560, 1440)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1701391444]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=955635769]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_xyssb")
+theme_override_font_sizes/font_size = 128
+text = "Good."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1419257325]
+custom_minimum_size = Vector2(512, 128)
+custom_maximum_size = Vector2(512, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_xyssb")
+theme_override_font_sizes/font_size = 48
+text = "Find another vessel"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

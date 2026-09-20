@@ -115,6 +115,9 @@ func _process(delta):
 			set_collision_layer_value(4, false);
 			set_collision_mask_value(4, false);
 			
+	if (Input.is_action_just_pressed("skip")):
+		get_tree().change_scene_to_file("res://Scenes/Rooms/end.tscn");
+			
 	if (spawnRate != 0):
 		var rand = randi_range(1, spawnRate);
 		if rand == 1:
@@ -282,4 +285,4 @@ func _on_next_room_pit_3_body_entered(body: Node2D) -> void:
 
 
 func _on_next_room_pit_4_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://Scenes/Rooms/interlude_4.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Rooms/end.tscn")
