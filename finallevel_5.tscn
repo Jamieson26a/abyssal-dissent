@@ -522,13 +522,13 @@ metadata/_custom_type_script = "uid://cjk8nronimk5r"
 position = Vector2(32, 32)
 tile_set = ExtResource("7_6xj5p")
 
+[node name="Next_Room_Pit_4" parent="." unique_id=1989462336 instance=ExtResource("10_qb1yr")]
+position = Vector2(3996, -524)
+scale = Vector2(0.5, 0.5)
+
 [node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_emld8")]
 position = Vector2(5, -117)
 collision_mask = 13
-
-[node name="Next_Room_Pit_4" parent="." unique_id=1989462336 instance=ExtResource("10_qb1yr")]
-position = Vector2(5227, -6078)
-scale = Vector2(5, 5)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1248931185]
 navigation_polygon = SubResource("NavigationPolygon_4fppj")

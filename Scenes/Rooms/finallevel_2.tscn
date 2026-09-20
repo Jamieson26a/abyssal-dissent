@@ -543,10 +543,6 @@ tile_set = ExtResource("7_loxrx")
 position = Vector2(3111, 3732.9998)
 scale = Vector2(2.5, 2.5)
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
-position = Vector2(16, 61)
-collision_mask = 13
-
 [node name="Lava" type="StaticBody2D" parent="." unique_id=2144762109]
 position = Vector2(1430.0001, 2057)
 scale = Vector2(0.88680565, 1)
@@ -603,6 +599,10 @@ position = Vector2(2066.754, 409.22797)
 rotation = 0.95644045
 scale = Vector2(0.99999946, 0.99999946)
 shape = SubResource("RectangleShape2D_pgrly")
+
+[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
+position = Vector2(16, 61)
+collision_mask = 13
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=842938748]
 position = Vector2(2002, 162)

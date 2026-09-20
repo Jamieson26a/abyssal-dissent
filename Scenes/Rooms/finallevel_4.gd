@@ -2,6 +2,7 @@ extends Node2D
 
 var eldritchActions: Dictionary;
 var spawnPositions: Array;
+var lvl: int;
 
 func _ready() -> void:
 	# Format: [Position of action, base priority, approval weight]
@@ -18,6 +19,8 @@ func _ready() -> void:
 		Vector2(5028.0,-445.0),
 		Vector2(4389.0,-2551.0)
 	]
+	
+	lvl = 8;
 
 
 func _on_area_body_entered(body: Node2D) -> void:

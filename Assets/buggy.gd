@@ -40,7 +40,5 @@ func _physics_process(delta):
 
 
 func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
-	print("hit");
-	if body.name.contains("Lava"):
-		print("lava bug");
+	if body.name.contains("Lava") or body.name.contains("Player"):
 		self.queue_free();
