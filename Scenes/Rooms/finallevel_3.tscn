@@ -4621,3 +4621,4 @@ position = Vector2(16, 61)
 collision_mask = 13
 
 [connection signal="body_entered" from="Next_Room_Pit_2" to="Player" method="_on_next_room_pit_2_body_entered"]
+[connection signal="body_entered" from="Spikes" to="Player" method="_on_lava_entered"]
