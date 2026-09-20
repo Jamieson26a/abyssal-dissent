@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqvgcr2p4o5jj"]
 
-[ext_resource type="Texture2D" uid="uid://jny3ubhe77fm" path="res://Assets/HealthSanityHands/left-hands/0.png" id="1_8s6bd"]
+[ext_resource type="Texture2D" uid="uid://k33od3rhpfmf" path="res://Assets/grimoir.png" id="1_pmsje"]
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="2_pmsje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fppj"]
@@ -12,8 +12,9 @@ size = Vector2(78, 110)
 shape = SubResource("RectangleShape2D_4fppj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=823353072]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_8s6bd")
+self_modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_pmsje")
 
 [node name="Label" type="Label" parent="." unique_id=304273955]
 visible = false
