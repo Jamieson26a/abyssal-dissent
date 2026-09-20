@@ -595,10 +595,6 @@ rotation = 0.95644045
 scale = Vector2(0.99999946, 0.99999946)
 shape = SubResource("RectangleShape2D_pgrly")
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
-position = Vector2(16, 61)
-collision_mask = 13
-
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=842938748]
 position = Vector2(2002, 162)
 color = Color(0.9397593, 0.7426324, 0.5284528, 1)
@@ -755,11 +751,6 @@ navigation_polygon = SubResource("NavigationPolygon_amgph")
 [node name="Node2D" type="Node2D" parent="." unique_id=14567228]
 position = Vector2(3201, 3725)
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
+[node name="Player" parent="." unique_id=1429212913 instance=ExtResource("9_1ocro")]
 position = Vector2(16, 61)
 collision_mask = 13
-
-[connection signal="body_entered" from="Next_Room_Pit_1" to="Player" method="_on_next_room_pit_1_body_entered"]
-[connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]
-[connection signal="body_entered" from="Lava2/LavaArea2D" to="Player" method="_on_lava_entered"]
-[connection signal="body_entered" from="Spikes" to="Player" method="_on_lava_entered"]
