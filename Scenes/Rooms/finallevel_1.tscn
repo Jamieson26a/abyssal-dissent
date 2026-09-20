@@ -536,10 +536,6 @@ tile_set = ExtResource("7_q08db")
 
 [node name="Next_Room_Pit" parent="." unique_id=1989462336 instance=ExtResource("9_bejdx")]
 position = Vector2(-339, 1251)
-scale = Vector2(0.25, 0.25)
-
-[node name="Sprite2D" parent="Next_Room_Pit" index="0" unique_id=105977048]
-texture_filter = 1
 
 [node name="CollisionShape2D" parent="Next_Room_Pit" index="1" unique_id=1002951456]
 scale = Vector2(3, 3)

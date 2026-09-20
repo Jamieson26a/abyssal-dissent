@@ -755,7 +755,7 @@ navigation_polygon = SubResource("NavigationPolygon_amgph")
 [node name="Node2D" type="Node2D" parent="." unique_id=14567228]
 position = Vector2(3201, 3725)
 
-[node name="Player" parent="." unique_id=1212776525 instance=ExtResource("9_1ocro")]
+[node name="Player2" parent="." unique_id=65849722 instance=ExtResource("9_1ocro")]
 position = Vector2(16, 61)
 collision_mask = 13
 
