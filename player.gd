@@ -30,6 +30,8 @@ func _ready():
 	currentTarget = position;
 	spawnRate = 0;
 	
+	$LeftHand/Clock.animation = str($"..".lvl);
+	
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
 	navigation_agent.path_desired_distance = 80.0
@@ -47,6 +49,7 @@ func set_movement_target(movement_target: Vector2):
 	navigation_agent.set_target_position(movement_target)
 
 func _process(delta):
+	$LeftHand/Clock.animation = str($"..".lvl);
 	var direction;
 	if (not yielding):
 		sanityTick = 5;

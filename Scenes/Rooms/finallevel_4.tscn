@@ -787,7 +787,6 @@ scale = Vector2(1.2631384, 4.3457737)
 shape = SubResource("RectangleShape2D_4fppj")
 
 [connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
-[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
-[connection signal="body_entered" from="Next_Room_Pit_3" to="Player" method="_on_next_room_pit_3_body_entered"]
 [connection signal="body_entered" from="Lava/LavaArea2D" to="Player" method="_on_lava_entered"]
 [connection signal="body_entered" from="Lava2/LavaArea2D" to="TileMapDual" method="_on_lava_entered"]
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
