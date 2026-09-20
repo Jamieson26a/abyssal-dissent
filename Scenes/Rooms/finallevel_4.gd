@@ -12,8 +12,11 @@ func _ready() -> void:
 	}
 	
 	spawnPositions = [ # ADD MORE
-		Vector2(1000, 1100),
-		Vector2(1750, 1250)
+		Vector2(2707.597, -1298.837),
+		Vector2(2973.0, -3714.0),
+		Vector2(3169.0,-989.0),
+		Vector2(5028.0,-445.0),
+		Vector2(4389.0,-2551.0)
 	]
 
 
