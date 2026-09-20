@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8wd20higjblm" path="res://Assets/Tilesets/stone-wall.png" id="2_50e6d"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="4_j2qwa"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="5_051rj"]
+[ext_resource type="PackedScene" uid="uid://c8sm2xyiki83d" path="res://Scenes/next_room_pit_1.tscn" id="5_ajtix"]
 [ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="6_l2j73"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajtix"]
@@ -150,3 +151,9 @@ metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
 [node name="Player" parent="." unique_id=1212776525 instance=ExtResource("6_l2j73")]
 position = Vector2(221, 249)
+
+[node name="Next_Room_Pit_1" parent="." unique_id=1989462336 instance=ExtResource("5_ajtix")]
+position = Vector2(1691, 1315)
+scale = Vector2(2, 2)
+
+[connection signal="body_entered" from="Next_Room_Pit_1" to="Player" method="_on_next_room_pit_1_body_entered"]

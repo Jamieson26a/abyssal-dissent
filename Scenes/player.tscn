@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cg80pkpg87xkv" path="res://player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://6pofbn73eyud" path="res://Assets/playerSprites.png" id="2_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://bje46h0bko4kk" path="res://Assets/pointlight.jpeg" id="2_p1odr"]
 [ext_resource type="Texture2D" uid="uid://cbxl0e6b5xxwb" path="res://Assets/HealthSanityHands/right-hands/0.png" id="3_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://ptlspwu0uof3" path="res://Assets/playerDiagonal.png" id="3_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://d0ckwif27b8o6" path="res://Assets/HealthSanityHands/right-hands/1.png" id="4_h4iuc"]
@@ -17,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://rgdk1i06gme8" path="res://Assets/HealthSanityHands/left-hands/3.png" id="12_bi64h"]
 [ext_resource type="Texture2D" uid="uid://djn8vwcrx78xi" path="res://Assets/HealthSanityHands/left-hands/4.png" id="13_2ijsl"]
 [ext_resource type="Texture2D" uid="uid://dl7gbww7la3y5" path="res://Assets/HealthSanityHands/left-hands/5.png" id="14_p1odr"]
-[ext_resource type="Texture2D" uid="uid://bto7hpqjp8ciw" path="res://light.png" id="17_qqcod"]
 [ext_resource type="AudioStream" uid="uid://b51fx0ubeh17t" path="res://Audio/Music/Ballad of an Unfortunate Soul.mp3" id="18_bi64h"]
 [ext_resource type="AudioStream" uid="uid://pqytvr02i3lm" path="res://Audio/Music/Mid Sanity 2.mp3" id="18_fs7ks"]
 [ext_resource type="Theme" uid="uid://tmjagednd5mo" path="res://addons/waste_no_space/waste_no_space.tres" id="18_igrcy"]
@@ -828,7 +828,7 @@ energy = 16.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 1
-texture = ExtResource("17_qqcod")
+texture = ExtResource("2_p1odr")
 texture_scale = 0.3
 height = 238.0
 

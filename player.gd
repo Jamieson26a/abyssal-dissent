@@ -239,8 +239,8 @@ func entityPrioritize() -> Array:
 		return [];
 
 func _on_next_room_pit_1_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://Scenes/Rooms/level_2.tscn")
-
+	get_tree().change_scene_to_file("res://interlude.tscn")
+	print("nextroom")
 
 func _on_buggy_hit_box_body_entered(body: Node2D) -> void:
 	if (body == self):
