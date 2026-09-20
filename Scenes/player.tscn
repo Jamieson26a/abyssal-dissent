@@ -954,12 +954,12 @@ shape = SubResource("CircleShape2D_p2gqb")
 position = Vector2(-9.536743e-07, 9.536743e-07)
 scale = Vector2(10, 10)
 color = Color(0.6851872, 0.5650246, 0.37406167, 1)
-energy = 5.0
+energy = 8.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 1
 texture = ExtResource("2_p1odr")
-texture_scale = 0.3
+texture_scale = 0.6
 height = 238.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1288046632]
