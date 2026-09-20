@@ -535,6 +535,7 @@ tile_map_data = PackedByteArray("AAD9/xkAAAABAAMAAAD9/xoAAAABAAEAAAD+/xkAAAADAAA
 tile_set = ExtResource("7_q08db")
 
 [node name="Next_Room_Pit" parent="." unique_id=1989462336 instance=ExtResource("9_bejdx")]
+modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
 position = Vector2(-339, 1251)
 scale = Vector2(0.25, 0.25)
 
