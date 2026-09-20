@@ -754,3 +754,7 @@ position = Vector2(3201, 3725)
 [node name="Player" parent="." unique_id=1429212913 instance=ExtResource("9_1ocro")]
 position = Vector2(16, 61)
 collision_mask = 13
+
+[connection signal="body_entered" from="Next_Room_Pit_1" to="Player" method="_on_next_room_pit_1_body_entered"]
+
+[editable path="Next_Room_Pit_1"]
