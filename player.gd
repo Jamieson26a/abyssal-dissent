@@ -109,6 +109,8 @@ func _process(delta):
 			$YieldPrompt.text = "PRESS Q TO YIELD"
 			set_collision_layer_value(3, true);
 			set_collision_mask_value(3, true);
+			set_collision_layer_value(4, false);
+			set_collision_mask_value(4, false);
 			
 	if (spawnRate != 0):
 		var rand = randi_range(1, spawnRate);
@@ -154,6 +156,12 @@ func sanityUpdate():
 	$RightHand/Eye.animation = str(level) + approvalStr;
 	if player_vars.sanity < 500:
 		spawnRate = player_vars.sanity * 10;
+	if player_vars.sanity < 200:
+		set_collision_layer_value(8, true);
+		set_collision_mask_value(8, true);
+	else:
+		set_collision_layer_value(8, false);
+		set_collision_mask_value(8, false);
 
 func _on_hazard_body_entered(body: Node2D) -> void:
 	hurt();
@@ -192,6 +200,8 @@ func yieldToEntity():
 	nextTask();
 	set_collision_layer_value(3, false);
 	set_collision_mask_value(3, false);
+	set_collision_layer_value(4, true);
+	set_collision_mask_value(4, true);
 	
 func nextTask():
 	if (taskPositions.size() != 0):
@@ -249,4 +259,8 @@ func spawnMob():
 	buggy.scale.y = 2.0;
 	buggy.get_node("Buggy hit Box").body_entered.connect(_on_buggy_hit_box_body_entered);
 	$"..".add_child(buggy);
-	
+
+
+func _on_water_body_entered(body: Node2D) -> void:
+	if (body == self):
+		hurt();
