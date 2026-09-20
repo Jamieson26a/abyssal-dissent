@@ -308,9 +308,6 @@ scale = Vector2(2, 2)
 position = Vector2(771, 783)
 scale = Vector2(2, 2)
 
-[node name="Buggy hit Box" parent="Buggy" index="0" unique_id=1942087536]
-collision_mask = 3
-
 [node name="bug sprite" parent="Buggy" index="1" unique_id=1116446087]
 frame_progress = 0.8085095
 
