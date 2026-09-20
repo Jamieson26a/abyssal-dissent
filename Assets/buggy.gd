@@ -37,6 +37,14 @@ func _physics_process(delta):
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
+	if (velocity.x >= abs(velocity.y)):
+		$"bug sprite".rotation_degrees = 90;
+	elif (velocity.x <= -abs(velocity.y)):
+		$"bug sprite".rotation_degrees = 270;
+	elif (velocity.y > 0):
+		$"bug sprite".rotation_degrees = 180;
+	elif (velocity.y < 0):
+		$"bug sprite".rotation_degrees = 0;
 
 
 func _on_buggy_hit_box_body_entered(body: Node2D) -> void:

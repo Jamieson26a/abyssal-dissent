@@ -4,7 +4,10 @@
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="2_yx4db"]
 [ext_resource type="Texture2D" uid="uid://8wd20higjblm" path="res://Assets/Tilesets/stone-wall.png" id="3_hivvh"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="4_3yogm"]
+[ext_resource type="Texture2D" uid="uid://bx1m46eu3qir4" path="res://Assets/heartBeat0.png" id="5_cpas3"]
 [ext_resource type="Texture2D" uid="uid://ieshnpuq7rto" path="res://Assets/heart.png" id="6_061se"]
+[ext_resource type="Texture2D" uid="uid://bwvrcgb5uxv2q" path="res://Assets/heartBeat1.png" id="6_mp331"]
+[ext_resource type="Texture2D" uid="uid://nqdjcorlpief" path="res://Assets/heartBeat3.png" id="7_1357p"]
 [ext_resource type="PackedScene" uid="uid://cyvu1072ot27p" path="res://Scenes/player.tscn" id="10_a3m3c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h14b2"]
@@ -144,6 +147,26 @@ vertices = PackedVector2Array(36.09375, 142, -3.75, 193.60156, -130.71094, 58.59
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5, 6), PackedInt32Array(7, 8, 9, 6), PackedInt32Array(10, 7, 6, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-145, 58, -3, -70, 22, -33, 10701, -18, 10701, -769, 12476, -774, 12486, 912, 10692, 900, 10704, 151, 41, 152, -3, 209)])
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fppj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cpas3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mp331")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1357p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_061se")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fppj"]
 size = Vector2(260.92285, 346)
 
@@ -165,12 +188,13 @@ metadata/_custom_type_script = "uid://cjk8nronimk5r"
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1001844979]
 navigation_polygon = SubResource("NavigationPolygon_1357p")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1952722128]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=402818640]
 modulate = Color(0.23529412, 0.23529412, 0.23529412, 1)
 self_modulate = Color(0.23529412, 0.23529412, 0.23529412, 1)
 position = Vector2(11820, 42)
 scale = Vector2(3.290821, 3.2908216)
-texture = ExtResource("6_061se")
+sprite_frames = SubResource("SpriteFrames_4fppj")
+frame_progress = 0.48698616
 
 [node name="Area2D" type="Area2D" parent="." unique_id=498713018]
 position = Vector2(11488, 46.23915)
