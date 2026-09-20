@@ -4619,3 +4619,5 @@ position = Vector2(-3286, 2584)
 [node name="Player" parent="." unique_id=1424886457 instance=ExtResource("9_3mshe")]
 position = Vector2(16, 61)
 collision_mask = 13
+
+[connection signal="body_entered" from="Next_Room_Pit_2" to="Player" method="_on_next_room_pit_2_body_entered"]
